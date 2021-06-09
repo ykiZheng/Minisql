@@ -1,3 +1,9 @@
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+# 模块: CatalogManager.py
+# 作者: 郑雨琪
+# 创建于：2021/6/7
+
 DBs = {}
 currentDB = ''
 Indexs = {}
@@ -28,14 +34,13 @@ class Table():
 
 """
  @ 属性
- @param attributeName, ifPriKey, ifUnique, type, length
+ @param attributeName, ifUnique, type, length
 """
 
 
 class Attribute():
-    def __init__(self, attributeName, ifPriKey, ifUnique, type='char', length=16):
+    def __init__(self, attributeName, ifUnique, type='char', length=16):
         self.attributeName = attributeName
-        self.ifPriKey = ifPriKey
         self.ifUnique = ifUnique
         self.type = type
         self.length = length
@@ -63,7 +68,6 @@ class InsertInfo():
     def __init__(self, tableName):
         self.tableName = tableName
 
-
 class InsertNode():
     def __init__(self, attrName, attrValue):
         self.attrName = attrName
@@ -75,13 +79,11 @@ class InsertNode():
  @param tableName, Attributes[]
 """
 
-
 class DeleteInfo():
     DeleteNode = []
 
     def __init__(self, tableName):
         self.tableName = tableName
-
 
 class DeleteNode():
     def __init__(self, attrName, attrValue):
@@ -126,10 +128,11 @@ def printDB():
     print('当前本机拥有数据库如下：')
     for i in DBs:
         print(i)
-# --------------------------------------
+# ---------------------------------
 # 表操作
 # --------------------------------
-def createTable(tableName__, attrNames,  types, ifPris, ifUniques):
+
+def createTable(tableName__, attrNames,  types, priKey, ifUniques):
     global DBs
     global currentDB
     if existsTable(tableName__):
@@ -137,10 +140,12 @@ def createTable(tableName__, attrNames,  types, ifPris, ifUniques):
     else:
         Attributes = []
         for i in range(0, len(attrNames)):
-            Attributes.append(Attribute(attrNames[i],ifPris[i],ifUniques[i],types[i]))
-        # new_table = Table(tableName__)
+            Attributes.append(Attribute(attrNames[i], ifUniques[i],types[i]))
+        new_table = Table(tableName__,priKey)
+        new_table.Attributes = Attributes
         # new_table.Attributes = Attributes
-        DBs[currentDB].tables[tableName__] = Attributes
+        DBs[currentDB].tables[tableName__] = new_table
+        # DBs[currentDB].tables[tableName__] = Attributes
         print('[Create Table]\t创建表',tableName__,'成功')
              
 def dropTable(tableName__):
@@ -162,19 +167,20 @@ def existsTable(tableName__):
             return True
     return False
 
-def printTable():
+def getTableInfo():
     print('当前本数据库',currentDB,'拥有表如下：')
     for i in DBs[currentDB].tables:
-        print('##',i)
+        
         new_table = DBs[currentDB].tables[i]
-        for j in range(0,len(new_table)):
-            new_attr = new_table[j]
-            print(new_attr.attributeName,'\t', new_attr.ifPriKey,'\t', new_attr.ifUnique, '\t',new_attr.type, '\t',new_attr.length)
+        print('##',i," priKey: ", new_table.priKey)
+        new_attr = new_table.Attributes
+        for j in new_attr:
+            # new_attr = new_table[j]
+            print(j.attributeName,'\t', j.ifUnique, '\t',j.type, '\t',j.length)
 
 # ------------------------
 # 索引操作
 # ----------------------
-
 def createIndex(indexName, tableName, attributeName):
     if existsIndex(indexName):
         print('[create Index]\t索引创建失败，已创建该索引名',indexName)
@@ -201,43 +207,46 @@ def existsIndex(indexName__):
             return True
     return False
 
-def printIndex():
+def getIndexInfo():
     print('当前本数据库',currentDB,'拥有索引如下：')
     for key in Indexs:
         print(key,'\t',Indexs[key])
 
 def existsAttr(tableName,attributeName):
     new_table = DBs[currentDB].tables[tableName]
-    for i in range(0,len(new_table)):
-        if new_table[i].attributeName == attributeName:
+    new_attr = new_table.Attributes
+    for i in new_attr:
+        if i.attributeName == attributeName:
             return True
     return False
 
-
+# ---------------------
+# test of CatalogManager
+# --------------------
 if __name__ == '__main__':
     createDB('myDB')
     createDB('YOURDB')
     SwitchToDB('myDB')
-    createTable('myTable',['haha','nana'],['char','int'],[1,0],[0,0])
+    createTable('myTable',['haha','nana'],['char','int'],1,[0,0])
     dropTable('66')
-    printTable()
-    createTable('lory',['zju','cmu'],['char','int'],[1,0],[0,0])
-    printTable()
-    createTable('myTable',['haha','nana'],['char','int'],[1,0],[0,0])
+    getTableInfo()
+    createTable('lory',['zju','cmu'],['char','int'],0,[0,0])
+    getTableInfo()
+    createTable('myTable',['haha','nana'],['char','int'],1,[0,0])
     # dropTable('myTable')
-    printTable()
+    getTableInfo()
     createIndex('zjuIndex','lory','zju')
-    printIndex()
+    getIndexInfo()
     createIndex('zjuIndex','lory','66')
     createIndex('zju','lory','66')
     createIndex('z','harri','zju')
     createIndex('cmuIndex','lory','cmu')
-    printIndex()
+    getIndexInfo()
     createIndex('hahIndex','myTable','haha')
     dropIndex('cmuIndex')
-    printIndex()
+    getIndexInfo()
     dropIndex('lal')
-    printIndex()
+    getIndexInfo()
     printDB()
     dropDB('myDB')
     printDB()
