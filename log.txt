@@ -1,25 +1,8 @@
-Thu Jun 10 09:32:37 2021: [create DB]	´´½¨Êı¾İ¿â myDB ³É¹¦
-Thu Jun 10 09:32:37 2021: [create DB]	´´½¨Êı¾İ¿âÊ§°Ü£¬µ±Ç°ÒÑÓĞ¸ÃÊı¾İ¿âÃû yourDB
-Thu Jun 10 09:32:37 2021: [Create Table]	´´½¨±í myTable ³É¹¦
-Thu Jun 10 09:32:37 2021: [Drop Table]	É¾³ıÊ§°Ü£¬²»´æÔÚ¸Ã±íÃû 66
-Thu Jun 10 09:32:37 2021: [Create Table]	´´½¨±í lory ³É¹¦
-Thu Jun 10 09:32:37 2021: [Create Table]	ÒÑ´æÔÚ¸Ã±íÃû myTable
-Thu Jun 10 09:32:37 2021: [Drop Table]	É¾³ı±í myTable ³É¹¦
-Thu Jun 10 09:32:37 2021: [create Index]	Ë÷Òı zjuIndex ´´½¨³É¹¦
-Thu Jun 10 09:32:37 2021: [create Index]	Ë÷Òı´´½¨Ê§°Ü£¬ÒÑ´´½¨¸ÃË÷ÒıÃû zjuIndex
-Thu Jun 10 09:32:37 2021: [create Index]	Ë÷Òı´´½¨Ê§°Ü£¬¸Ã±í²»´æÔÚÊôĞÔ 66
-Thu Jun 10 09:32:37 2021: [create Index]	Ë÷Òı´´½¨Ê§°Ü£¬µ±Ç°Êı¾İ¿â²»´æÔÚ±í harri
-Thu Jun 10 09:32:37 2021: [create Index]	Ë÷Òı cmuIndex ´´½¨³É¹¦
-Thu Jun 10 09:32:37 2021: [create Index]	Ë÷Òı´´½¨Ê§°Ü£¬µ±Ç°Êı¾İ¿â²»´æÔÚ±í myTable
-Thu Jun 10 09:32:37 2021: [drop Index]	É¾³ıË÷Òı cmuIndex ³É¹¦
-Thu Jun 10 09:32:37 2021: [drop Index]	É¾³ıË÷ÒıÊ§°Ü£¬²»´æÔÚ¸ÃË÷ÒıÃû lal
-Thu Jun 10 09:32:37 2021: [drop DB]		É¾³ıÊı¾İ¿â myDB ³É¹¦
-Thu Jun 10 09:32:37 2021: [drop DB]		É¾³ıÊı¾İ¿âÊ§°Ü£¬µ±Ç°²»´æÔÚÊı¾İ¿âÃûÎª heyheyehey
-Thu Jun 10 10:28:20 2021: [create DB]	´´½¨Êı¾İ¿â lll ³É¹¦
-Thu Jun 10 10:28:20 2021: [create DB]	´´½¨Êı¾İ¿âÊ§°Ü£¬µ±Ç°ÒÑÓĞ¸ÃÊı¾İ¿âÃû mingming
-Thu Jun 10 10:28:20 2021: [Create Table]	ÒÑ´æÔÚ¸Ã±íÃû gogo1
-Thu Jun 10 10:28:20 2021: [Create Table]	ÒÑ´æÔÚ¸Ã±íÃû gogo2
-Thu Jun 10 10:28:20 2021: [create Index]	Ë÷Òı id_index ´´½¨³É¹¦
-Thu Jun 10 10:28:20 2021: [create Index]	Ë÷Òı´´½¨Ê§°Ü£¬ÒÑ´´½¨¸ÃË÷ÒıÃû gender_index
-Thu Jun 10 10:28:20 2021: [drop Index]	É¾³ıË÷Òı id_index ³É¹¦
-Thu Jun 10 10:28:20 2021: [drop DB]		É¾³ıÊı¾İ¿â lll ³É¹¦
+Thu Jun 10 15:23:57 2021: [create DB]	åˆ›å»ºæ•°æ®åº“ lll æˆåŠŸ
+Thu Jun 10 15:23:57 2021: [create DB]	åˆ›å»ºæ•°æ®åº“å¤±è´¥ï¼Œå½“å‰å·²æœ‰è¯¥æ•°æ®åº“å mingming
+Thu Jun 10 15:23:57 2021: [Create Table]	å·²å­˜åœ¨è¯¥è¡¨å gogo1
+Thu Jun 10 15:23:57 2021: [Create Table]	å·²å­˜åœ¨è¯¥è¡¨å gogo2
+Thu Jun 10 15:23:57 2021: [create Index]	ç´¢å¼• id_index åˆ›å»ºæˆåŠŸ
+Thu Jun 10 15:23:57 2021: [create Index]	ç´¢å¼•åˆ›å»ºå¤±è´¥ï¼Œå·²åˆ›å»ºè¯¥ç´¢å¼•å gender_index
+Thu Jun 10 15:23:57 2021: [drop Index]	åˆ é™¤ç´¢å¼• id_index æˆåŠŸ
+Thu Jun 10 15:23:57 2021: [drop DB]		åˆ é™¤æ•°æ®åº“ lll æˆåŠŸ

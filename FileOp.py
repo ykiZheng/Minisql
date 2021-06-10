@@ -23,13 +23,13 @@ class MiniSQLSyntaxError(MiniSQLError):
 # log 信息保存
 def log(msg):
     print(msg)
-    with open(log_file, 'a') as f:
+    with open(log_file, 'a',encoding='utf-8') as f:
         f.write(localtime+': '+msg+'\n')
 
 # json格式导入
 def load(path):
     try:
-        with open(path, 'r') as f:
+        with open(path, 'r',encoding='utf-8') as f:
             if os.path.getsize(path):
                 data = json.load(f)
             else:
@@ -41,7 +41,7 @@ def load(path):
 # json格式保存
 def store(obj, path):
     print(obj)
-    with open(path, 'w') as fw:
+    with open(path, 'w',encoding='utf-8') as fw:
         json.dump(obj, fw)
 
 

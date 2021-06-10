@@ -68,8 +68,8 @@ path            --文件路径，形如'\DBFiles.myDB'
 }
 ```
 
-可以直接查看yourDB_index.json文件熟悉
+可以直接查看 yourDB_index.json 文件熟悉
 
 # log说明
-没啥好说的，直接传入message就行了
-如果打开是乱码，用GBD编码重新打开
+没啥好说的，直接传入 message 就行了
+既在屏幕上打印，又保存在 log.txt 里
