@@ -1,8 +1,8 @@
-Thu Jun 10 15:23:57 2021: [create DB]	创建数据库 lll 成功
-Thu Jun 10 15:23:57 2021: [create DB]	创建数据库失败，当前已有该数据库名 mingming
-Thu Jun 10 15:23:57 2021: [Create Table]	已存在该表名 gogo1
-Thu Jun 10 15:23:57 2021: [Create Table]	已存在该表名 gogo2
-Thu Jun 10 15:23:57 2021: [create Index]	索引 id_index 创建成功
-Thu Jun 10 15:23:57 2021: [create Index]	索引创建失败，已创建该索引名 gender_index
-Thu Jun 10 15:23:57 2021: [drop Index]	删除索引 id_index 成功
-Thu Jun 10 15:23:57 2021: [drop DB]		删除数据库 lll 成功
+Thu Jun 10 16:00:44 2021: [create DB]	创建数据库 lll 成功
+Thu Jun 10 16:00:44 2021: [create DB]	创建数据库失败，当前已有该数据库名 mingming
+Thu Jun 10 16:00:44 2021: [Create Table]	已存在该表名 gogo1
+Thu Jun 10 16:00:44 2021: [Create Table]	已存在该表名 gogo2
+Thu Jun 10 16:00:44 2021: [create Index]	索引 id_index 创建成功
+Thu Jun 10 16:00:44 2021: [create Index]	索引创建失败，已创建该索引名 gender_index
+Thu Jun 10 16:00:44 2021: [drop Index]	删除索引 id_index 成功
+Thu Jun 10 16:00:44 2021: [drop DB]		删除数据库 lll 成功
