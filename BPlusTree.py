@@ -1,6 +1,5 @@
 import sys
 import json
-import os
 import time
 import math as mt
 import copy as cp
@@ -11,7 +10,7 @@ class BPlusTree():
     def __init__(self):
         self.Trees = {}
         self.degree = 4
-        self.all_values = []
+        self.fetch_nodes = []
 
     def GetFileBTree(self, file_path):
         with open(file_path, 'r') as fp:
@@ -122,7 +121,32 @@ class BPlusTree():
             #     rest_father_node['children'][rest_child_index] = current_node
             #     current_node = rest_father_node
             if not len(search_node_list):
-                self.Trees = current_node    
+                self.Trees = current_node  
+
+    #条件搜索  
+    def Condition_search_node(self, key, condition):
+        res = ['False']
+        if condition == 0: #等于
+            temp = self.Search_key(key)
+            if temp[0]:
+                res.append([temp[1]])
+        else: 
+            self.fetch_nodes = []
+            self.Fetch_nodes_condition(self.Trees, key, condition)
+            if self.fetch_nodes:
+                res.append(self.fetch_nodes)
+        return res
+
+    #条件删除
+    def Condition_delete_node(self, key, condition):
+        res = self.Condition_search_node(key, condition)
+        if res[0]:
+            delete_nodes = res[1]
+            for delete_key in delete_nodes:
+                self.Delete_key(delete_key)
+            return True
+        else:
+            return False
 
     #搜索
     def Search_key(self, key):
@@ -134,7 +158,7 @@ class BPlusTree():
                 left_child_key = current_node['keys'][child_index]
                 right_child_key = current_node['keys'][child_index+1]
                 if key >= left_child_key and key < right_child_key:
-                    break 
+                    break
                 child_index = child_index + 1
                 if child_index == current_node['num'] - 1:
                     break
@@ -187,7 +211,6 @@ class BPlusTree():
             search_node_list.append(current_node)
             search_index_list.append(delete_index)
             self.Borrow_delete_update(search_node_list, search_index_list, True)
-   
     #删除时候递归更新
     def Recursion_update(self, current_node, node_list, index_list):
         update_key = current_node['keys'][0]
@@ -203,7 +226,7 @@ class BPlusTree():
             father_node = node_list.pop()
         father_node['keys'][update_index] = update_key
         pass
-
+    #删除时候更新父节点
     def Update_delete_father(self, father_list, index_list):
         current_node = father_list[-1]
         remove_index = index_list[-1]
@@ -221,7 +244,7 @@ class BPlusTree():
                     self.Trees = current_node['children'][1-remove_index]
             else:
                 self.Borrow_delete_update(father_list, index_list, False)
-
+    #删除从兄弟节点借元素的情况
     def Borrow_delete_update(self, search_node_list, search_index_list, isleaf):
         current_node = search_node_list.pop()
         delete_index = search_index_list.pop()
@@ -296,24 +319,43 @@ class BPlusTree():
                 self.Update_delete_father(search_node_list, search_index_list)
 
         #获取树的所有节点
-    def Fetch_all_nodes(self, node):
+
+    #条件遍历元素
+    def Fetch_nodes_condition(self, node, key, condition):
         if not node:
             return
         if node['leaf']:
-            for value in node['values']:
-                self.all_values.append(value)
-            return
-        for item in node['children']:
-            if not item['leaf']:
-                self.Fetch_all_nodes(item)
-            else:
-                for value in item['values']:
-                    self.all_values.append(value)
+            for i in range(node['num']):
+                if condition == -1:
+                    self.fetch_nodes.append(node['values'][i])
+                elif condition == 1:
+                    if node['keys'][i] != key:
+                        self.fetch_nodes.append(node['values'][i])
+                elif condition == 2:
+                    if node['keys'][i] < key:
+                        self.fetch_nodes.append(node['values'][i])
+                elif condition == 3:
+                    if node['keys'][i] > key:
+                        self.fetch_nodes.append(node['values'][i])
+                elif condition == 4:
+                    if node['keys'][i] <= key:
+                        self.fetch_nodes.append(node['values'][i])
+                elif condition == 5:
+                    if node['keys'][i] >= key:
+                        self.fetch_nodes.append(node['values'][i])
+        else:
+            for child in node['children']:
+                self.Fetch_nodes_condition(child, key, condition)
             
+    def Fetch_all_nodes(self):
+        self.fetch_nodes = []
+        self.Fetch_nodes_condition(self.Trees, 0, -1)
+        return self.fetch_nodes
 
-# def search(key):
+
+# def search(key, condition):
 #     t1 = time.perf_counter()            
-#     result = BT.Search_key(key)
+#     result = BT.Condition_search_node(key, condition)
 #     t2 = time.perf_counter()
 #     if result[0]:
 #         print('Find key-value:',result[1])
@@ -323,21 +365,29 @@ class BPlusTree():
 
 # if __name__ == '__main__':
 #     global BT
-#     BT = BPlusTree('btree.json')
-#     BT.GetFileBTree()
-#     # BT.BuildNewBPTree()
+#     BT = BPlusTree()
+#     #BT.GetFileBTree()
+#     BT.BuildNewBPTree()
 #     # for i in range(10):
 #     #     BT.Insert_node(i, i)
-#     key = 5
-#     search(key)
-#     BT.Delete_key(4)
-#     BT.Delete_key(2)
-#     search(6)
-#     BT.Delete_key(6)
-#     key = 6
-#     BT.Delete_key(3)
-#     BT.Delete_key(1)
-#     BT.Delete_key(9)
-#     BT.Delete_key(8)
+#     for i in range(20):
+#         BT.Insert_node(i, i)
+    
+    # search(12, 0)
+    # search(12, 1)
+    # search(12, 2)
+    # search(12, 3)
+    # search(12, 4)
+    # search(12, 5)
 
-#     search(key)
+    # BT.Condition_delete_node(11, 0)
+    # BT.Condition_delete_node(11, 1)
+    # BT.Condition_delete_node(11, 2)
+    # BT.Condition_delete_node(11, 3)
+    # BT.Condition_delete_node(11, 4)
+    # BT.Condition_delete_node(11, 5)
+
+    # res = BT.Fetch_all_nodes()
+    # print(res)
+
+    # BT.SaveBPTree('BT.json')

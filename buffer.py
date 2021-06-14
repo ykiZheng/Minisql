@@ -98,6 +98,11 @@ class Buffer():
                 item = st.unpack(format, temp)[0]
                 item = item.decode('utf-8')
                 data_size += it
+                cstr = ''
+                for char in item:
+                    if char != '\x00':
+                        cstr += char
+                item = cstr
             res.append(item)
         return res
 
