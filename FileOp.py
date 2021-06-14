@@ -51,7 +51,7 @@ def load(path):
 
 
 def store(obj, path):
-    print(obj)
+    # print(obj)
     with open(path, 'w', encoding='utf-8') as fw:
         json.dump(obj, fw)
 
