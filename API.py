@@ -204,7 +204,7 @@ def insert(query):
         else:
             raise MiniSQLError('[insert]\t不存在该表'+tableName)
     else:
-        raise MiniSQLSyntaxError('Syntax Error in: ', query)
+        raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
 # where 后语句分解为 属性 attrs、操作 ops、值keys
 def seperateCondition(query,condition):
