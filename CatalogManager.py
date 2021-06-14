@@ -168,13 +168,14 @@ def dropTable(tableName__):
         for IndexName, col in index:
             if col != Prikey:
                 dropIndex(IndexName,False)
-                schemas.pop(tableName__)
                 store(schemas, path)
                 globalValue.currentIndex.Drop_table(tableName__, Prikey)
                 log('[Drop Table]\t删除表 '+tableName__+' 成功')
             else:
                 dropIndex(IndexName, True)
-                log('[drop table]\t不能删去主键索引')
+        schemas.pop(tableName__)
+        store(schemas,path)
+                # log('[drop table]\t不能删去主键索引')
 
         
 
