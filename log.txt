@@ -1,0 +1,1470 @@
+Thu Jun 10 16:00:44 2021: [create DB]	创建数据库 lll 成功
+Thu Jun 10 16:00:44 2021: [create DB]	创建数据库失败，当前已有该数据库名 mingming
+Thu Jun 10 16:00:44 2021: [Create Table]	已存在该表名 gogo1
+Thu Jun 10 16:00:44 2021: [Create Table]	已存在该表名 gogo2
+Thu Jun 10 16:00:44 2021: [create Index]	索引 id_index 创建成功
+Thu Jun 10 16:00:44 2021: [create Index]	索引创建失败，已创建该索引名 gender_index
+Thu Jun 10 16:00:44 2021: [drop Index]	删除索引 id_index 成功
+Thu Jun 10 16:00:44 2021: [drop DB]		删除数据库 lll 成功
+Sat Jun 12 19:42:06 2021: [create DB]	创建数据库 myDB 成功
+Sat Jun 12 19:42:06 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sat Jun 12 19:42:06 2021: [Create Table]	创建表 myTable 成功
+Sat Jun 12 19:42:06 2021: [Drop Table]	删除失败，不存在该表名 66
+Sat Jun 12 19:42:06 2021: [Create Table]	创建表 lory 成功
+Sat Jun 12 19:42:06 2021: [Create Table]	已存在该表名 myTable
+Sat Jun 12 19:42:06 2021: [Drop Table]	删除表 myTable 成功
+Sat Jun 12 19:43:01 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sat Jun 12 19:43:01 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sat Jun 12 19:43:01 2021: [Create Table]	创建表 myTable 成功
+Sat Jun 12 19:43:01 2021: [Drop Table]	删除失败，不存在该表名 66
+Sat Jun 12 19:43:01 2021: [Create Table]	已存在该表名 lory
+Sat Jun 12 19:43:01 2021: [Create Table]	已存在该表名 myTable
+Sat Jun 12 19:43:01 2021: [Drop Table]	删除表 myTable 成功
+Sat Jun 12 20:04:30 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sat Jun 12 20:04:30 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sat Jun 12 20:04:30 2021: [Create Table]	创建表 myTable 成功
+Sat Jun 12 20:04:30 2021: [Drop Table]	删除失败，不存在该表名 66
+Sat Jun 12 20:04:30 2021: [Create Table]	已存在该表名 lory
+Sat Jun 12 20:04:30 2021: [Create Table]	已存在该表名 myTable
+Sat Jun 12 20:04:30 2021: [Drop Table]	删除表 myTable 成功
+Sat Jun 12 20:04:30 2021: [create Index]	索引 zjuIndex 创建成功
+Sat Jun 12 20:04:30 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sat Jun 12 20:04:30 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sat Jun 12 20:04:30 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sat Jun 12 20:04:30 2021: [create Index]	索引 cmuIndex 创建成功
+Sat Jun 12 20:04:30 2021: [create Index]	索引创建失败，当前数据库不存在表 myTable
+Sat Jun 12 20:04:30 2021: [drop Index]	删除索引 cmuIndex 成功
+Sat Jun 12 20:04:30 2021: [drop Index]	删除索引失败，不存在该索引名 lal
+Sat Jun 12 20:04:30 2021: [drop DB]		删除数据库 myDB 成功
+Sat Jun 12 20:04:30 2021: [drop DB]		删除数据库失败，当前不存在数据库名为 heyheyehey
+Sun Jun 13 17:20:02 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 17:20:02 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 17:23:44 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 17:23:44 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 17:23:44 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 17:23:44 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 17:23:44 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 17:23:44 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:26:47 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 17:26:47 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 17:26:47 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:26:47 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 17:26:47 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:27:19 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 17:27:19 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 17:27:19 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 17:27:19 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 17:27:19 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:28:11 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 17:28:11 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 17:28:11 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:28:11 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 17:28:11 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:30:04 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 17:30:04 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 17:30:04 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 17:30:04 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 17:30:04 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 17:30:04 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 17:30:04 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 17:30:04 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 17:30:04 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 17:30:04 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 19:22:17 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 19:22:17 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 19:22:17 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 19:22:17 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 19:22:17 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 19:30:40 2021: [create DB]	创建数据库失败，当前已有该数据库名 lll
+Sun Jun 13 19:31:54 2021: [create DB]	创建数据库失败，当前已有该数据库名 lll
+Sun Jun 13 19:31:54 2021: [create DB]	创建数据库失败，当前已有该数据库名 mingming
+Sun Jun 13 19:31:54 2021: #error: 切换数据库失败，当前不存在该数据库名: 
+Sun Jun 13 19:31:54 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 19:31:54 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 19:32:26 2021: [create DB]	创建数据库失败，当前已有该数据库名 lll
+Sun Jun 13 19:32:26 2021: [create DB]	创建数据库失败，当前已有该数据库名 mingming
+Sun Jun 13 19:32:26 2021: #error: 切换数据库失败，当前不存在该数据库名: 
+Sun Jun 13 19:32:26 2021: [Create Table]	已存在该表名 gogo1
+Sun Jun 13 19:32:26 2021: [Create Table]	已存在该表名 gogo2
+Sun Jun 13 20:03:55 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:03:55 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:03:55 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:03:55 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:03:55 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:07:23 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:07:23 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:07:23 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:07:23 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:07:23 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:17:25 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:17:25 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:17:25 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:17:25 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:17:25 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:19:08 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 20:19:08 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 20:19:08 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:19:08 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 20:19:08 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:20:13 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:20:13 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:20:13 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:20:13 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:20:13 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:25:01 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 20:25:01 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 20:25:01 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:25:01 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 20:25:01 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:28:51 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 20:28:51 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 20:28:51 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:28:51 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 20:28:51 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:29:44 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 20:29:44 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 20:29:44 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:29:44 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 20:29:44 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:30:24 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:30:24 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:30:24 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:30:24 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:30:24 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:31:08 2021: [create DB]	创建数据库失败，当前已有该数据库名 myDB
+Sun Jun 13 20:31:08 2021: [create DB]	创建数据库失败，当前已有该数据库名 yourDB
+Sun Jun 13 20:31:08 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:31:08 2021: [Create Table]	已存在该表名 lory
+Sun Jun 13 20:31:08 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:36:50 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:36:50 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:36:50 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:36:50 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:36:50 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:37:51 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:37:51 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:37:51 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:37:51 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:37:51 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:37:51 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 20:41:12 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:41:12 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:41:12 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:41:12 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:41:12 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:41:12 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:42:48 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:42:48 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:42:48 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:42:48 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:42:48 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:42:48 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:49:00 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:49:00 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:49:00 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:49:00 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:49:00 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:49:00 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:50:02 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:50:02 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:50:02 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:50:02 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:50:02 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:50:02 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:51:15 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:51:15 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:51:15 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:51:15 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:51:15 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:51:15 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:53:23 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:53:23 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:53:23 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:53:23 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:53:23 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:53:23 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:53:23 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 20:53:23 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 20:53:23 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 20:53:23 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 20:56:20 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 20:56:20 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 20:56:20 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 20:56:20 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 20:56:20 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 20:56:20 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 20:56:20 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:35:08 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 21:35:08 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 21:35:08 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 21:35:08 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 21:35:08 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 21:35:08 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 21:44:39 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:44:39 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:44:39 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:44:39 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:44:39 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:44:39 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:44:39 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:44:39 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:44:39 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:44:39 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:45:50 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:45:50 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:45:50 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:45:50 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:45:50 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:45:50 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:45:50 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:45:50 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:45:50 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:45:50 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:46:20 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:46:20 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:46:20 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:46:20 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:46:20 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:46:20 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:47:06 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:47:06 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:47:06 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:47:06 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:47:06 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:47:06 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:47:06 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:47:06 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:47:06 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:47:06 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:47:06 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 21:47:06 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 21:48:56 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:48:56 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:48:56 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:48:56 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:48:56 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:48:56 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:48:56 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:48:56 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:48:56 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:48:56 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:48:56 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 21:48:56 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 21:49:39 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:49:39 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:49:39 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:49:39 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:49:39 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:49:39 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:49:39 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:49:39 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:49:39 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:49:39 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:49:39 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 21:49:39 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 21:50:30 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:50:30 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:50:30 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:50:30 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:50:30 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:50:30 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:50:30 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:50:30 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:50:30 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:50:30 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:50:30 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 21:50:30 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 21:50:59 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 21:50:59 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 21:50:59 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 21:50:59 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 21:50:59 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 21:50:59 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 21:50:59 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 21:50:59 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 21:50:59 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 21:50:59 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 21:50:59 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 21:50:59 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 21:50:59 2021: [drop Index]	删除索引 cmuIndex 成功
+Sun Jun 13 22:09:43 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:09:43 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:09:43 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:09:43 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:09:43 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:09:43 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:09:43 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 22:09:43 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:10:31 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:10:31 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:10:31 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:10:31 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:10:31 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:10:31 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:10:31 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 22:10:31 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:10:31 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 22:10:31 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 22:10:31 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 22:10:31 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 22:19:24 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:19:24 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:19:24 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:19:24 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:19:24 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:19:24 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:19:24 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 22:19:24 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:19:24 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 22:19:24 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 22:19:24 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 22:19:24 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 22:19:57 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:19:57 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:19:57 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:19:57 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:19:57 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:19:57 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:19:57 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 22:19:57 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:19:57 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 22:19:57 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 22:19:57 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 22:19:57 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 22:19:57 2021: [drop Index]	删除索引 cmuIndex 成功
+Sun Jun 13 22:22:44 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:22:44 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:22:44 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:22:44 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:22:44 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:22:44 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:22:44 2021: [Drop Table]	删除表 myTable 成功
+Sun Jun 13 22:22:44 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:22:44 2021: [create Index]	索引创建失败，该表不存在属性 111
+Sun Jun 13 22:22:44 2021: [create Index]	索引创建失败，该表不存在属性 222
+Sun Jun 13 22:23:23 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:23:23 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:23:23 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:23:23 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:23:23 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:23:23 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:23:23 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:23:23 2021: [create Index]	索引创建失败，该表不存在属性 111
+Sun Jun 13 22:23:23 2021: [create Index]	索引创建失败，该表不存在属性 222
+Sun Jun 13 22:23:23 2021: [create Index]	索引创建失败，该表不存在属性 333
+Sun Jun 13 22:24:29 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:24:29 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:24:29 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:24:29 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:24:29 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:24:29 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:24:29 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:24:29 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:24:29 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:24:29 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:24:29 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:25:50 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:25:50 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:25:50 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:25:50 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:25:50 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:25:50 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:25:50 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:25:50 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:25:50 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:25:50 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:25:50 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:28:22 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:28:22 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:28:22 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:28:22 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:28:22 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:28:22 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:28:22 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:28:22 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:28:22 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:28:37 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:28:37 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:28:37 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:28:37 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:28:37 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:28:37 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:28:37 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:28:37 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:28:37 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:30:03 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:30:03 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:30:03 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:30:03 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:30:03 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:30:03 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:30:03 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:30:03 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:30:03 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:30:03 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:30:03 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:30:19 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:30:19 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:30:19 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:30:19 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:30:19 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:30:19 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:30:19 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:30:19 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:30:19 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:30:19 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:30:19 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:32:39 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:32:39 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:32:39 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:32:39 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:32:39 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:32:39 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:32:39 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:32:39 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:32:39 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:32:39 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:32:39 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:33:28 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:33:28 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:33:28 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:33:28 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:33:28 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:33:28 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:33:28 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:33:28 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:33:28 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:33:28 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:33:28 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:33:28 2021: [drop Index]	删除索引 333Index 成功
+Sun Jun 13 22:33:28 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 22:33:28 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 22:33:28 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 22:33:28 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 22:33:28 2021: [drop Index]	删除索引 cmuIndex 成功
+Sun Jun 13 22:36:28 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:36:28 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:37:01 2021: [create DB]	创建数据库 myDB 成功
+Sun Jun 13 22:37:01 2021: [create DB]	创建数据库 yourDB 成功
+Sun Jun 13 22:37:01 2021: [create Index]	索引 PriKey_haha 创建成功
+Sun Jun 13 22:37:01 2021: [Create Table]	创建表 myTable 成功
+Sun Jun 13 22:37:01 2021: [Drop Table]	删除失败，不存在该表名 66
+Sun Jun 13 22:37:01 2021: [create Index]	索引 PriKey_zju 创建成功
+Sun Jun 13 22:37:01 2021: [Create Table]	创建表 lory 成功
+Sun Jun 13 22:37:01 2021: [Create Table]	已存在该表名 myTable
+Sun Jun 13 22:37:01 2021: [create Index]	索引 zjuIndex 创建成功
+Sun Jun 13 22:37:01 2021: [create Index]	索引 111Index 创建成功
+Sun Jun 13 22:37:01 2021: [create Index]	索引 222Index 创建成功
+Sun Jun 13 22:37:01 2021: [create Index]	索引 333Index 创建成功
+Sun Jun 13 22:37:01 2021: [create Index]	索引 lalalalIndex 创建成功
+Sun Jun 13 22:37:01 2021: [drop Index]	删除索引 333Index 成功
+Sun Jun 13 22:37:01 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Sun Jun 13 22:37:01 2021: [create Index]	索引创建失败，该表不存在属性 66
+Sun Jun 13 22:37:01 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Sun Jun 13 22:37:01 2021: [create Index]	索引 cmuIndex 创建成功
+Sun Jun 13 22:37:01 2021: [drop Index]	删除索引 cmuIndex 成功
+Sun Jun 13 22:38:47 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:38:47 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:39:32 2021: [create DB]	创建数据库失败，当前已有该数据库名 lll
+Sun Jun 13 22:39:32 2021: [create DB]	创建数据库失败，当前已有该数据库名 mingming
+Sun Jun 13 22:39:32 2021: [Create Table]	已存在该表名 gogo1
+Sun Jun 13 22:39:32 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:39:32 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:39:43 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:39:43 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:40:05 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:40:05 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:40:05 2021: #error: 切换数据库失败，当前不存在该数据库名: yourdb
+Sun Jun 13 22:42:04 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:42:04 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:42:04 2021: #error: 切换数据库失败，当前不存在该数据库名: yourdb
+Sun Jun 13 22:43:01 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:43:01 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:43:46 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:43:46 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:44:41 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:44:41 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:44:41 2021: #error: 切换数据库失败，当前不存在该数据库名: yourdb
+Sun Jun 13 22:46:13 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:46:13 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:46:13 2021: #error: 切换数据库失败，当前不存在该数据库名: yourdb
+Sun Jun 13 22:46:31 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:46:31 2021: [create DB]	创建数据库 mingming 成功
+Sun Jun 13 22:46:55 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:46:55 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:46:55 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:46:55 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:46:55 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:46:55 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:46:55 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:46:55 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:47:31 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:47:31 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:47:31 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:47:31 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:47:31 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:47:31 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:47:31 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:47:31 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:47:31 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:47:31 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 22:48:24 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:48:24 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:49:07 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:49:07 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:49:07 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:49:07 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:49:07 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:49:07 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:49:07 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:49:07 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:49:07 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:49:07 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 22:49:48 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:49:48 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:49:48 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:49:48 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:49:48 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:49:48 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:49:48 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:49:48 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:49:48 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:49:48 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 22:50:12 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:50:12 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:50:12 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:50:12 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:50:12 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:50:12 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:50:12 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:50:12 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:50:12 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:50:12 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 22:50:31 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:50:31 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:50:31 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:50:31 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:50:31 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:50:31 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:50:31 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:50:31 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:50:31 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:50:31 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 22:51:05 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:51:05 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:51:05 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:51:05 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:51:05 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:51:05 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:51:05 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:51:05 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:51:05 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:51:05 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 22:51:46 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 22:51:46 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 22:51:46 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:51:46 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 22:51:46 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 22:51:46 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 22:51:46 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 22:51:46 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 22:51:46 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 22:51:46 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:26:03 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:26:03 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:26:03 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:26:03 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:26:03 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:26:03 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:26:03 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:26:03 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:26:03 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:26:03 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:28:04 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:28:04 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:28:04 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:28:04 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:28:04 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:28:04 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:28:04 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:28:04 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:28:04 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:28:04 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:29:29 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:29:29 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:29:29 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:29:29 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:29:29 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:29:29 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:29:29 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:29:29 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:29:29 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:29:29 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:29:47 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:29:47 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:29:47 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:29:47 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:29:47 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:29:47 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:29:47 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:29:47 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:29:47 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:29:47 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:32:28 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:32:28 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:32:28 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:32:28 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:32:28 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:32:28 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:32:28 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:32:28 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:32:28 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:32:28 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:34:36 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:34:36 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:34:36 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:34:36 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:34:36 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:34:36 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:34:36 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:34:36 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:34:36 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:34:36 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:34:49 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:34:49 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:34:49 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:34:49 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:34:49 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:34:49 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:34:49 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:34:49 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:34:49 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:34:49 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:38:59 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:38:59 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:38:59 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:38:59 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:38:59 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:38:59 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:38:59 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:38:59 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:38:59 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:38:59 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:44:23 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:44:23 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:44:23 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:44:23 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:44:23 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:44:23 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:44:23 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:44:23 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:44:23 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:44:23 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:45:22 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:45:22 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:45:22 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:45:22 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:45:22 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:45:22 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:45:22 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:45:22 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:45:22 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:45:22 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:47:08 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:47:08 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:47:08 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:47:08 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:47:08 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:47:08 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:47:08 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:47:08 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:47:08 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:47:08 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:47:33 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:47:33 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:47:33 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:47:33 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:47:33 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:47:33 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:47:33 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:47:33 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:47:33 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:47:33 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:47:33 2021: [select]	Not Found
+Sun Jun 13 23:49:28 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:49:28 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:49:28 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:49:28 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:49:28 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:49:28 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:49:28 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:49:28 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:49:28 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:49:28 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:49:28 2021: [select]	Not Found
+Sun Jun 13 23:51:05 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:51:05 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:51:05 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:51:05 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:51:05 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:51:05 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:51:21 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:51:21 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:51:21 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:51:21 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:51:21 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:51:21 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:51:21 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:51:21 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:51:21 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:51:21 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:51:21 2021: [select]	Not Found
+Sun Jun 13 23:52:01 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:52:01 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:52:01 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:52:01 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:52:01 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:52:01 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:52:01 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:52:01 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:52:01 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:52:01 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:52:01 2021: [select]	Not Found
+Sun Jun 13 23:53:37 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:53:37 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:53:37 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:53:37 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:53:37 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:53:37 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:53:37 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:53:37 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:53:37 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:53:37 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:53:37 2021: [select]	Not Found
+Sun Jun 13 23:54:49 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:54:49 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:54:49 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:54:49 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:54:49 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:54:49 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:54:49 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:54:49 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:54:49 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:54:49 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:54:49 2021: [select]	Not Found
+Sun Jun 13 23:55:33 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:55:33 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:55:33 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:55:33 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:55:33 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:55:33 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:55:33 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:55:33 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:55:33 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:55:33 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:55:33 2021: [select]	Not Found
+Sun Jun 13 23:55:59 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:55:59 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:55:59 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:55:59 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:55:59 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:55:59 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:55:59 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:55:59 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:55:59 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:55:59 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:55:59 2021: [select]	Not Found
+Sun Jun 13 23:58:45 2021: [create DB]	创建数据库 lll 成功
+Sun Jun 13 23:58:45 2021: [create DB]	创建数据库 yourdb 成功
+Sun Jun 13 23:58:45 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:58:45 2021: [Create Table]	创建表 gogo1 成功
+Sun Jun 13 23:58:45 2021: [create Index]	索引创建失败，该表不存在属性 s
+Sun Jun 13 23:58:45 2021: [Create Table]	创建表 gogo2 成功
+Sun Jun 13 23:58:45 2021: [create Index]	索引 id_index 创建成功
+Sun Jun 13 23:58:45 2021: [create Index]	索引 gender_index 创建成功
+Sun Jun 13 23:58:45 2021: [drop Index]	删除索引 id_index 成功
+Sun Jun 13 23:58:45 2021: [drop DB]		删除数据库 lll 成功
+Sun Jun 13 23:58:45 2021: [select]	Not Found
+Mon Jun 14 00:01:28 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:01:28 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:01:28 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:01:28 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:01:28 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:01:28 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:01:28 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:01:28 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:01:28 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:01:28 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:01:28 2021: [select]	Not Found
+Mon Jun 14 00:01:59 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:01:59 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:01:59 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:01:59 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:01:59 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:01:59 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:01:59 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:01:59 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:01:59 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:01:59 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:01:59 2021: [select]	Not Found
+Mon Jun 14 00:03:37 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:03:37 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:03:37 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:03:37 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:03:37 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:03:37 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:03:37 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:03:37 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:03:37 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:03:37 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:03:37 2021: [select]	Not Found
+Mon Jun 14 00:05:53 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:05:53 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:05:53 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:05:53 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:05:53 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:05:53 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:05:53 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:05:53 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:05:53 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:05:53 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:05:53 2021: [select]	Not Found
+Mon Jun 14 00:08:29 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:08:29 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:08:29 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:08:29 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:08:29 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:08:29 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:08:29 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:08:29 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:08:29 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:08:29 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:08:29 2021: [select]	Not Found
+Mon Jun 14 00:10:06 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:10:06 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:10:06 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:10:06 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:10:06 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:10:06 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:10:06 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:10:06 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:10:06 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:10:06 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:10:06 2021: [select]	Not Found
+Mon Jun 14 00:12:05 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:12:05 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:12:05 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:12:05 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:12:05 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:12:05 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:12:05 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:12:05 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:12:05 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:12:05 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:12:05 2021: [select]	Not Found
+Mon Jun 14 00:12:34 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:12:34 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:12:34 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:12:34 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:12:34 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:12:34 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:12:34 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:12:34 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:12:34 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:12:34 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:12:34 2021: [select]	Not Found
+Mon Jun 14 00:15:11 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:15:11 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:15:11 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:15:11 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:15:11 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:15:11 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:15:11 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:15:11 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:15:11 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:15:11 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:15:11 2021: [select]	Not Found
+Mon Jun 14 00:15:34 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:15:34 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:15:34 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:15:34 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:15:34 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:15:34 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:15:34 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:15:34 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:15:34 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:15:34 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:15:34 2021: [select]	Not Found
+Mon Jun 14 00:17:11 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:17:11 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:17:11 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:17:11 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:17:11 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:17:11 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:17:11 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:17:11 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:17:11 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:17:11 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:17:11 2021: [select]	Not Found
+Mon Jun 14 00:18:40 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:18:40 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:18:40 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:18:40 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:18:40 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:18:40 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:18:40 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:18:40 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:18:40 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:18:40 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:18:40 2021: [select]	Not Found
+Mon Jun 14 00:19:17 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:19:17 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:19:17 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:19:17 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:19:17 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:19:17 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:19:17 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:19:17 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:19:17 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:19:17 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:19:17 2021: [select]	Not Found
+Mon Jun 14 00:21:07 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:21:07 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:21:07 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:21:07 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:21:07 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:21:07 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:21:07 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:21:07 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:21:07 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:21:07 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:21:07 2021: [select]	Not Found
+Mon Jun 14 00:21:41 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:21:41 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:21:41 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:21:41 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:21:41 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:21:41 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:21:41 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:21:41 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:21:41 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:21:41 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:21:41 2021: [select]	Not Found
+Mon Jun 14 00:22:09 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:22:09 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:22:09 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:22:09 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:22:09 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:22:09 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:22:09 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:22:09 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:22:09 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:22:09 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:22:09 2021: [select]	Not Found
+Mon Jun 14 00:25:04 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:25:04 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:25:04 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:25:04 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:25:04 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:25:04 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:25:04 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:25:04 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:25:04 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:25:04 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:25:04 2021: [select]	Not Found
+Mon Jun 14 00:28:35 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:28:35 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:28:35 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:28:35 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:28:35 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:28:35 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:28:35 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:28:35 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:28:35 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:28:35 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:28:35 2021: [select]	Not Found
+Mon Jun 14 00:30:00 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:30:00 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:30:00 2021: [create Index]	索引创建失败，该表不存在属性 s
+Mon Jun 14 00:30:00 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:30:00 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:30:00 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:30:00 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:30:00 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:30:00 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:30:00 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:30:00 2021: [select]	Not Found
+Mon Jun 14 00:32:41 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:32:41 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:33:13 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:33:13 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:33:13 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:33:13 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:33:13 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:33:13 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:33:13 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:33:13 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:33:13 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:33:13 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:33:13 2021: [select]	Not Found
+Mon Jun 14 00:35:08 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:35:08 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:35:08 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:35:08 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:35:08 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:35:08 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:35:08 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:35:08 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:35:08 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:35:08 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:35:08 2021: [select]	Not Found
+Mon Jun 14 00:36:39 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:36:39 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:36:39 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:36:39 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:36:39 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:36:39 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:36:39 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:36:39 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:36:39 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:36:39 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:36:39 2021: [select]	Not Found
+Mon Jun 14 00:38:48 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:38:48 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:38:48 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:38:48 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:38:48 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:38:48 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:38:48 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:38:48 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:38:48 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:38:48 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:38:48 2021: [select]	Not Found
+Mon Jun 14 00:39:26 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:39:26 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:39:26 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:39:26 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:39:26 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:39:26 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:39:26 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:39:26 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:39:26 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:39:26 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:39:26 2021: [select]	Not Found
+Mon Jun 14 00:40:15 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:40:15 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:40:15 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:40:15 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:40:15 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:40:15 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:40:15 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:40:15 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:40:15 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:40:15 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:40:15 2021: [select]	Not Found
+Mon Jun 14 00:43:44 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:43:44 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:44:51 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:44:51 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:44:51 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:44:51 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:44:51 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:44:51 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:44:51 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:44:51 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:44:51 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:51:09 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:51:09 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:51:36 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:51:36 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:51:36 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:51:36 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:51:36 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:51:36 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:51:36 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:51:36 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:51:36 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:51:36 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:51:36 2021: [select]	Not Found
+Mon Jun 14 00:52:02 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:52:02 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:52:02 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:52:02 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:52:02 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:52:02 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:52:02 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:52:02 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:52:02 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:52:02 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:52:02 2021: [select]	Not Found
+Mon Jun 14 00:52:55 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:52:55 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:52:55 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:52:55 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:52:55 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:52:55 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:52:55 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:52:55 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:52:55 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:52:55 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:52:55 2021: [select]	Not Found
+Mon Jun 14 00:53:14 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:53:14 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:53:14 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:53:14 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:53:14 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:53:14 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:53:14 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:53:14 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 00:53:14 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 00:53:14 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 00:53:14 2021: [select]	Not Found
+Mon Jun 14 00:53:33 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 00:53:33 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 00:53:33 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 00:53:33 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 00:53:33 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 00:53:33 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 00:53:33 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 00:53:33 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:06:05 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:06:05 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:06:05 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:06:05 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:06:05 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:06:05 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:06:05 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:06:05 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:06:05 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 09:06:05 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:06:05 2021: [select]	Not Found
+Mon Jun 14 09:09:53 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:09:53 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:09:53 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:09:53 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:09:53 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:09:53 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:11:29 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:11:29 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:11:29 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:11:29 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:11:29 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:11:29 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:12:33 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:12:33 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:12:33 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:12:33 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:12:33 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:12:33 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:12:54 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:12:54 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:13:10 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:13:10 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:13:10 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:13:10 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:13:10 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:13:10 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:14:24 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:14:24 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:14:24 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:14:24 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:14:24 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:14:24 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:14:46 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:14:46 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:14:46 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:14:46 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:14:46 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:14:46 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:14:46 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:14:46 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:14:46 2021: [drop Index]	删除索引 id_index 成功
+Mon Jun 14 09:14:46 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:14:46 2021: [select]	Not Found
+Mon Jun 14 09:20:07 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:20:07 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:20:07 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:20:07 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:20:07 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:20:07 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:20:07 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:20:07 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:20:07 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:20:07 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:20:07 2021: [select]	Not Found
+Mon Jun 14 09:23:24 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:23:24 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:23:24 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:23:24 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:23:24 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:23:24 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:23:24 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:23:24 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:23:24 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:23:24 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:23:24 2021: [select]	Not Found
+Mon Jun 14 09:23:24 2021: [select]	Not Found
+Mon Jun 14 09:24:10 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:24:10 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:24:10 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:24:10 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:24:10 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:24:10 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:24:10 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:24:10 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:24:10 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:24:10 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:24:10 2021: [select]	Not Found
+Mon Jun 14 09:24:10 2021: [select]	Not Found
+Mon Jun 14 09:26:42 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:26:42 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:26:42 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:26:42 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:26:42 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:26:42 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:26:42 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:26:42 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:26:42 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:26:42 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:26:42 2021: [select]	Not Found
+Mon Jun 14 09:28:09 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:28:09 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:28:09 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:28:09 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:28:09 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:28:09 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:28:09 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:28:09 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:28:09 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:28:09 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:28:09 2021: [select]	Not Found
+Mon Jun 14 09:28:18 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:28:18 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:28:18 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:28:18 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:28:18 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:28:18 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:28:18 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:28:18 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:28:18 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:28:18 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:28:18 2021: [select]	Not Found
+Mon Jun 14 09:28:33 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:28:33 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:28:33 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:28:33 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:28:33 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:28:33 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:28:33 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:28:33 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:28:33 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:28:33 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:28:33 2021: [select]	Not Found
+Mon Jun 14 09:29:30 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:29:30 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:29:30 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:29:30 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:29:30 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:29:30 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:29:30 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:29:30 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:29:30 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:29:30 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:29:30 2021: [select]	Not Found
+Mon Jun 14 09:34:48 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:34:48 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:34:48 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:34:48 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:34:48 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:34:48 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:34:48 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:34:48 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:34:48 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:34:48 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:35:06 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:35:06 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:35:06 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:35:06 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:35:06 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:35:06 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:35:06 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:35:06 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:35:06 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:35:06 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:36:41 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:36:41 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:36:41 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:36:41 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:36:41 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:36:41 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:36:41 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:36:41 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:36:41 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:36:41 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:39:00 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:39:00 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:39:00 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:39:00 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:39:00 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:39:00 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:39:00 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:39:00 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:39:00 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:39:00 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:39:25 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:39:25 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:39:25 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:39:25 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:39:25 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:39:25 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:39:25 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:39:25 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:39:25 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:39:25 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:39:32 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:39:32 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:39:32 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:39:32 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:39:32 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:39:32 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:39:32 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:39:32 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:39:32 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:39:32 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:44:38 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:44:38 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:44:38 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:44:38 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:44:38 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:44:38 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:44:38 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:44:38 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:44:38 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:44:38 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:45:07 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:45:07 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:45:07 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:45:07 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:45:07 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:45:07 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:45:07 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:45:07 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:45:07 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:45:07 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:45:54 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:45:54 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:45:54 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:45:54 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:45:54 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:45:54 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:45:54 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:45:54 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:45:54 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:45:54 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:46:21 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:46:21 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:46:21 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:46:21 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:46:21 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:46:21 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:46:21 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:46:21 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:46:21 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:46:21 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:46:51 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:46:51 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:46:51 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:46:51 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:46:51 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:46:51 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:46:51 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:46:51 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:46:51 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:46:51 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:47:10 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:47:10 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:47:10 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:47:10 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:47:10 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:47:10 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:47:10 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:47:10 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:47:10 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:47:10 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:47:52 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:47:52 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:47:52 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:47:52 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:47:52 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:47:52 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:47:52 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:47:52 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:47:52 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:47:52 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 09:53:33 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:53:33 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:53:33 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:53:33 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:53:33 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:53:33 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:53:33 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:53:33 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:53:33 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:55:12 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:55:12 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:55:12 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:55:12 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:55:12 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:55:12 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:55:12 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:55:12 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:55:12 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:55:35 2021: [create DB]	创建数据库 lll 成功
+Mon Jun 14 09:55:35 2021: [create DB]	创建数据库 yourdb 成功
+Mon Jun 14 09:55:35 2021: [create Index]	索引 PriKey_id 创建成功
+Mon Jun 14 09:55:35 2021: [Create Table]	创建表 gogo1 成功
+Mon Jun 14 09:55:35 2021: [create Index]	索引创建失败，已创建该索引名 PriKey_id
+Mon Jun 14 09:55:35 2021: [Create Table]	创建表 gogo2 成功
+Mon Jun 14 09:55:35 2021: [create Index]	索引 id_index 创建成功
+Mon Jun 14 09:55:35 2021: [create Index]	索引 gender_index 创建成功
+Mon Jun 14 09:55:35 2021: [drop Index]	删除索引失败，无法删除主键索引 id_index
+Mon Jun 14 09:55:35 2021: [select database] 当前数据库为 yourdb
+Mon Jun 14 09:55:35 2021: [drop DB]		删除数据库 lll 成功
+Mon Jun 14 10:00:41 2021: [create DB]	创建数据库 myDB 成功
+Mon Jun 14 10:00:41 2021: [create DB]	创建数据库 yourDB 成功
+Mon Jun 14 10:00:41 2021: [create Index]	索引 PriKey_haha 创建成功
+Mon Jun 14 10:00:41 2021: [Create Table]	创建表 myTable 成功
+Mon Jun 14 10:00:41 2021: [Drop Table]	删除失败，不存在该表名 66
+Mon Jun 14 10:00:41 2021: [create Index]	索引 PriKey_zju 创建成功
+Mon Jun 14 10:00:41 2021: [Create Table]	创建表 lory 成功
+Mon Jun 14 10:00:41 2021: [Create Table]	已存在该表名 myTable
+Mon Jun 14 10:00:41 2021: [create Index]	索引 zjuIndex 创建成功
+Mon Jun 14 10:00:41 2021: [create Index]	索引 111Index 创建成功
+Mon Jun 14 10:00:41 2021: [create Index]	索引 222Index 创建成功
+Mon Jun 14 10:00:41 2021: [create Index]	索引 333Index 创建成功
+Mon Jun 14 10:00:41 2021: [create Index]	索引 lalalalIndex 创建成功
+Mon Jun 14 10:00:41 2021: [drop Index]	删除索引 333Index 成功
+Mon Jun 14 10:00:41 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Mon Jun 14 10:00:41 2021: [create Index]	索引创建失败，该表不存在属性 66
+Mon Jun 14 10:00:41 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Mon Jun 14 10:00:41 2021: [create Index]	索引 cmuIndex 创建成功
+Mon Jun 14 10:00:41 2021: [drop Index]	删除索引 cmuIndex 成功
+Mon Jun 14 10:01:22 2021: [create DB]	创建数据库 myDB 成功
+Mon Jun 14 10:01:22 2021: [create DB]	创建数据库 yourDB 成功
+Mon Jun 14 10:01:22 2021: [create Index]	索引 PriKey_haha 创建成功
+Mon Jun 14 10:01:22 2021: [Create Table]	创建表 myTable 成功
+Mon Jun 14 10:01:22 2021: [Drop Table]	删除失败，不存在该表名 66
+Mon Jun 14 10:01:22 2021: [create Index]	索引 PriKey_zju 创建成功
+Mon Jun 14 10:01:22 2021: [Create Table]	创建表 lory 成功
+Mon Jun 14 10:01:22 2021: [Create Table]	已存在该表名 myTable
+Mon Jun 14 10:01:22 2021: [create Index]	索引 zjuIndex 创建成功
+Mon Jun 14 10:01:22 2021: [create Index]	索引 111Index 创建成功
+Mon Jun 14 10:01:22 2021: [create Index]	索引 222Index 创建成功
+Mon Jun 14 10:01:22 2021: [create Index]	索引 333Index 创建成功
+Mon Jun 14 10:01:22 2021: [create Index]	索引 lalalalIndex 创建成功
+Mon Jun 14 10:01:22 2021: [drop Index]	删除索引 333Index 成功
+Mon Jun 14 10:01:22 2021: [create Index]	索引创建失败，已创建该索引名 zjuIndex
+Mon Jun 14 10:01:22 2021: [create Index]	索引创建失败，该表不存在属性 66
+Mon Jun 14 10:01:22 2021: [create Index]	索引创建失败，当前数据库不存在表 harri
+Mon Jun 14 10:01:22 2021: [create Index]	索引 cmuIndex 创建成功
+Mon Jun 14 10:01:22 2021: [drop Index]	删除索引 cmuIndex 成功

@@ -2,20 +2,51 @@ from BPlusTree import BPlusTree
 from NormalList import NormalList
 from buffer import Buffer
 import json
+import os
+import struct as st
+from FileOp import *
+
+def Initialize(indexpath, listpath, datapath):
+    # indexpath = index_filepath.format(DBName__)
+    # listpath= list_filepath.format(DBName__)
+    # datapath = data_filepath.format(DBName__)
+    fp_index = open(indexpath, 'w')
+    fp_list = open(listpath, 'w')
+    
+    if not os.path.getsize(indexpath):
+        a = {}
+        fp_index.write(json.dumps(a))
+    if not os.path.getsize(listpath):
+        a = {}
+        fp_list.write(json.dumps(a))
+    fp_data = open(datapath, 'wb')
+    if not os.path.getsize(datapath):
+        a = 1024
+        b = 0
+        a = st.pack('i', a)
+        b = st.pack('i', b)
+        fp_data.write(a)
+        fp_data.write(b)
+    fp_index.close()
+    fp_list.close()
+    fp_data.close()
+
 
 class Index():
     def __init__(self):
         self.index_trees = {}
         self.normal_list = {}
         self.buffer = Buffer()
+    
 
     def Load_file(self, index_filepath, list_filepath, data_filepath):
+        Initialize(index_filepath, list_filepath, data_filepath)
         self.index_filepath = index_filepath
         self.list_filepath = list_filepath
-        with open(index_filepath,'r') as Ifp:
+        with open(self.index_filepath,'r') as Ifp:
             self.index_trees = json.load(Ifp)
             Ifp.close()
-        with open(list_filepath,'r') as Lfp:
+        with open(self.list_filepath,'r') as Lfp:
             self.normal_list = json.load(Lfp)
             Lfp.close()
         self.buffer.Load_data_file(data_filepath)
@@ -46,7 +77,7 @@ class Index():
     def Drop_table(self, table_name, primary_key):
         BT = BPlusTree()
         BT.Trees = self.index_trees[table_name][primary_key]
-        BT.Fetch_all_nodes(self.Trees)
+        BT.Fetch_all_nodes(BT.Trees)
         all_data_offset = BT.all_values
         for it in all_data_offset:
             self.buffer.Delete_data(it)
@@ -79,6 +110,8 @@ class Index():
             return res
         else:
             NL = NormalList()
+            if column_name == []:
+                return None
             NL.Load_list(self.normal_list[table_name][column_name])
             res = NL.Search_key(key)
             if res[0]:
@@ -140,3 +173,11 @@ class Index():
             return False
         self.Insert_into_table(table_name, column, attribute, values, index_list)
         return True
+
+
+def main():
+    # globalValue.currentDB = "myDB"
+    index = Index()
+
+if __name__ == '__main__':
+    main()
