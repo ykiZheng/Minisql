@@ -158,21 +158,23 @@ def createTable(tableName__, attributes,  types, priKey, ifUniques):
 def dropTable(tableName__):
     try:
         path = DBFiles.format(globalValue.currentDB)
+
         schemas = load(path)
     except FileNotFoundError:
         schemas = {}
     if tableName__ in schemas:
         index = schemas[tableName__]['index']
         Prikey = schemas[tableName__]['primary_key']
-        if index != Prikey:
-            for col, IndexName in index:
-                dropIndex(IndexName)
+        for IndexName, col in index:
+            if col != Prikey:
+                dropIndex(IndexName,False)
                 schemas.pop(tableName__)
                 store(schemas, path)
                 globalValue.currentIndex.Drop_table(tableName__, Prikey)
                 log('[Drop Table]\t删除表 '+tableName__+' 成功')
-        else:
-            log('[drop table]\t不能删去主键索引')
+            else:
+                dropIndex(IndexName, True)
+                log('[drop table]\t不能删去主键索引')
 
         
 
@@ -190,7 +192,7 @@ def showTables():
         names = []
         for name in schemas:
             names.append(name)
-            print(name)
+            # print(name)
         return names
     except FileNotFoundError:
         schemas = None
@@ -280,7 +282,7 @@ def createIndex(indexName, tableName, attri):
             log('[create Index]\t索引创建失败，当前数据库不存在表 ' + tableName)
 
 
-def dropIndex(indexName__):
+def dropIndex(indexName__, ifPri):
     indexFile = index_File.format(globalValue.currentDB)
     path = DBFiles.format(globalValue.currentDB)
     schemas = load(path)
@@ -296,7 +298,7 @@ def dropIndex(indexName__):
         attri = Indexs[indexName__]['attri']
         table = schemas[tableName]
 
-        if table['primary_key'] == attri:
+        if table['primary_key'] == attri and ifPri == False:
             log('[drop Index]\t删除索引失败，无法删除主键索引 ' + indexName__,)
             return False
         Indexs.pop(indexName__)
@@ -421,7 +423,9 @@ def main():
                 'char(30)', 'int'], 'zju', [True, False])
     showTables()
     createTable('myTable', ['haha', 'nana'], ['char(25)', 'int'], 1, [0, 0])
-    # dropTable('myTable')
+    globalValue.currentIndex.Save_file()
+    dropTable('myTable')
+    globalValue.currentIndex.Save_file()
     showTables()
     UniqueOfAttr('lory', 'zju')
 
@@ -429,16 +433,11 @@ def main():
     createIndex('zjuIndex', 'lory', 'zju')
     createIndex('111Index', 'myTable', '111')
     createIndex('222Index', 'myTable', '222')
-    globalValue.currentIndex.Save_file()
-    # globalValue.currentIndex.Load_file(index_filepath.format(globalValue.currentDB), list_filepath.format(globalValue.currentDB), data_filepath.format(globalValue.currentDB))
+    
     createIndex('333Index', 'myTable', '333')
     createIndex('lalalalIndex', 'myTable', 'lalalal')
-    globalValue.currentIndex.Save_file()
-    # globalValue.currentIndex.Load_file(index_filepath.format(globalValue.currentDB), list_filepath.format(globalValue.currentDB), data_filepath.format(globalValue.currentDB))
     
-    dropIndex('333Index')
-    globalValue.currentIndex.Save_file()
-    # globalValue.currentIndex.Load_file(index_filepath.format(globalValue.currentDB), list_filepath.format(globalValue.currentDB), data_filepath.format(globalValue.currentDB))
+    dropIndex('333Index',False)
     
     getIndexInfo()
     createIndex('zjuIndex', 'lory', '66')
@@ -448,7 +447,8 @@ def main():
     globalValue.currentIndex.Save_file()
     print(showTables())
     # createIndex('hahIndex', 'myTable', 'haha')
-    dropIndex('cmuIndex')
+    dropIndex('cmuIndex',False)
+    dropIndex('zjuIndex',True)
     # getIndexInfo()
     # dropIndex('lal')
     # getIndexInfo()

@@ -82,7 +82,7 @@ def show_dbs(query):
         raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
 def show_tables(query):
-    match = re.match(r'^show\s+tables)$', query, re.S)
+    match = re.match(r'^show\s+tables$', query, re.S)
     if match:
         return showTables()
     else:
@@ -147,6 +147,7 @@ def drop_table(query):
         tableName = match.group(1)
         # dropTable(tableName, buf)
         dropTable(tableName)
+        
     else:
         raise MiniSQLSyntaxError('Syntax Error in: ', query)
 
@@ -169,7 +170,7 @@ def drop_index(query):
         r'^drop\s+index\s+([a-z](\w)*)$', query, re.S)
     if match:
         indexName = match.group(1).strip()
-        dropIndex(indexName)
+        dropIndex(indexName,False)
     else:
         raise MiniSQLSyntaxError('Syntax Error in: ', query)
 # ---------------------------------------
