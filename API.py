@@ -75,7 +75,7 @@ def select_db(query):
         raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
 def show_dbs(query):
-    match = re.match(r'^show\s+databases)$', query, re.S)
+    match = re.match(r'^show\s+databases$', query, re.S)
     if match:
         return  printDB()
     else:
@@ -149,7 +149,7 @@ def drop_table(query):
         dropTable(tableName)
         
     else:
-        raise MiniSQLSyntaxError('Syntax Error in: ', query)
+        raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
 
 def create_index(query):
@@ -162,7 +162,7 @@ def create_index(query):
         attri = match.group(3).strip()
         createIndex(indexName, tableName, attri)
     else:
-        raise MiniSQLSyntaxError('Syntax Error in: ', query)
+        raise MiniSQLSyntaxError('Syntax Error in: '+query)
 
 
 def drop_index(query):
@@ -172,7 +172,7 @@ def drop_index(query):
         indexName = match.group(1).strip()
         dropIndex(indexName,False)
     else:
-        raise MiniSQLSyntaxError('Syntax Error in: ', query)
+        raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 # ---------------------------------------
 
 
@@ -262,7 +262,7 @@ def seperateCondition(query,condition):
                                 ops.append(3)
                                 keys.append(match.group(2).strip())
                             else:
-                                raise MiniSQLSyntaxError('Syntax Error in: ', query)
+                                raise MiniSQLSyntaxError('Syntax Error in: '+ query)
     schema['keys'] = keys
     schema['attrs'] = attrs
     schema['ops'] = ops
@@ -315,7 +315,7 @@ def delete(query):
             else:
                 raise MiniSQLError('[delete]\t不存在该表 '+tableName)
         else:
-            raise MiniSQLSyntaxError('Syntax Error in: ', query)
+            raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
 
 def select(query):
