@@ -82,7 +82,7 @@ def show_dbs(query):
         raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
 def show_tables(query):
-    match = re.match(r'^show\s+tables)$', query, re.S)
+    match = re.match(r'^show\s+tables$', query, re.S)
     if match:
         return showTables()
     else:
@@ -142,11 +142,12 @@ def create_table(query):
 
 def drop_table(query):
     match = re.match(
-        r'^drop\s+database\s+([a-z][0-9a-z_]*)$', query, re.S)
+        r'^drop\s+table\s+([a-z][0-9a-z_]*)$', query, re.S)
     if match:
         tableName = match.group(1)
         # dropTable(tableName, buf)
         dropTable(tableName)
+        
     else:
         raise MiniSQLSyntaxError('Syntax Error in: ', query)
 
@@ -169,7 +170,7 @@ def drop_index(query):
         r'^drop\s+index\s+([a-z](\w)*)$', query, re.S)
     if match:
         indexName = match.group(1).strip()
-        dropIndex(indexName)
+        dropIndex(indexName,False)
     else:
         raise MiniSQLSyntaxError('Syntax Error in: ', query)
 # ---------------------------------------
@@ -290,7 +291,7 @@ def delete(query):
             ops = subCond['ops']
 
             #------------------------------有问题，待改，等待新接口
-            return globalValue.currentIndex.Drop_field_from_table(tableName, attrs, isPri, keys, isindex, unique)
+            return globalValue.currentIndex.Drop_field_from_table(tableName, attrs, isPri, keys, isindex, unique,ops)
         else:
             raise MiniSQLError('[delete]\t不存在该表'+tableName)
     else:
@@ -325,6 +326,8 @@ def select(query):
             types = []
             subcon = seperateCondition(query,condition)
             attrs =subcon['attrs']
+            keys = subcon['keys']
+            ops = subcon['ops']
             for attr in attrs:
                 if not existsAttr(tableName,attr):
                     raise MiniSQLError('[select]\t表 '+tableName+' 中不存在该属性 '+attr)
@@ -332,10 +335,10 @@ def select(query):
                     uniques.append(UniqueOfAttr(tableName,attr))
                     ifindexs.append(IndexOfAttr(tableName,attr))
                     types.append(TypeOfAttr(tableName,attr))
+
             schema = getTable(tableName)
             isPri = schema['primary_key']
-            keys = subcon['keys']
-            ops = subcon['ops']
+            
             
         
             
@@ -388,7 +391,9 @@ def main():
         'create table gogo1(id int, stuName char(20), gender char(1), seat int)')
     create_table(
         'create table gogo2(id int, stuName char(20), gender char(1), seat int,primary key (id))')
-    showTables()
+    print(show_tables('show tables'))
+    drop_table('drop table gogo1')
+    print(show_tables('show tables'))
 
     print(globalValue.currentDB)
     create_index('create index id_index on gogo1(id)')
@@ -397,7 +402,7 @@ def main():
     showTables()
     drop_index('drop index id_index')
 
-    select_db('select database ()')
+    print(select_db('select database ()'))
     drop_db('drop database lll')
     # print(select('select * from gogo1'))
     for i in range(1,1000):
