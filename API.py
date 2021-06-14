@@ -188,7 +188,12 @@ def insert(query):
             schema = getTable(tableName)
             attrs = schema['attrs']
             types = schema['types']
-            uniques = schema['uniques']
+            indexs =[]
+
+            for attr in attrs:
+                index = IndexOfAttr(tableName,attr)
+                indexs.append(index)
+                # indexs.append(IndexOfAttr(tableName,attr))
 
             num = 0
             # for attr in attrs:
@@ -201,7 +206,7 @@ def insert(query):
                     vv = float(vv)
                 num+=1
                 values.append(vv)
-            globalValue.currentIndex.Insert_into_table(tableName,attrs,types,values,uniques) 
+            globalValue.currentIndex.Insert_into_table(tableName,attrs,types,values,indexs) 
         else:
             raise MiniSQLError('[insert]\t不存在该表'+tableName)
     else:
@@ -280,6 +285,8 @@ def delete(query):
             
             subCond = seperateCondition(query,condition.strip())
             attrs = subCond['attrs']
+            keys = subCond['keys']
+            ops = subCond['ops']
             for attr in attrs:
                 if not existsAttr(tableName,attr):
                     raise MiniSQLError('[delete]\t表 '+tableName+' 中不存在该属性 '+attr)
@@ -287,8 +294,7 @@ def delete(query):
                     unique.append(UniqueOfAttr(tableName,attr))
                     isindex.append(IndexOfAttr(tableName,attr))
                     types.append(TypeOfAttr(tableName,attr))
-            keys = subCond['keys']
-            ops = subCond['ops']
+            
 
             #------------------------------有问题，待改，等待新接口
             return globalValue.currentIndex.Drop_field_from_table(tableName, attrs, isPri, keys, isindex, unique,ops)
@@ -302,9 +308,10 @@ def delete(query):
             tableName = match.group(1).strip()
             condition = None
             if existsTable(tableName):
-                condition = condition
+                schema = getTable(tableName)
+                isPri = schema['primary_key']
                 #----------------------------------等新接口
-                # return globalValue.currentIndex.Drop_field_from_table(tableName, attrs, isPri, keys, isindex, unique)
+                return globalValue.currentIndex.Drop_field_from_table(tableName, [], isPri, [], [], [],-1)
             else:
                 raise MiniSQLError('[delete]\t不存在该表 '+tableName)
         else:
@@ -338,11 +345,7 @@ def select(query):
 
             schema = getTable(tableName)
             isPri = schema['primary_key']
-            
-            
-        
-            
-            
+         
         else:
             raise MiniSQLError('[select]\t不存在该表 '+tableName)
     else:
@@ -359,7 +362,7 @@ def select(query):
             attrs = []
             types = []
             keys = []
-            ops = []
+            ops = -1
 
         else:
             raise MiniSQLSyntaxError('Syntax Error in: '+ query)
@@ -369,7 +372,7 @@ def select(query):
         # for c in cols:
         #     cols.append(c.strip())
     else:
-        select_res = globalValue.currentIndex.Select_from_table(tableName,attrs,types,keys,ifindexs)
+        select_res = globalValue.currentIndex.Select_from_table(tableName,isPri,types,keys,ifindexs,ops)
         
         if select_res:
             output = {}
@@ -392,14 +395,14 @@ def main():
     create_table(
         'create table gogo2(id int, stuName char(20), gender char(1), seat int,primary key (id))')
     print(show_tables('show tables'))
-    drop_table('drop table gogo1')
+    drop_table('drop table gogo2')
     print(show_tables('show tables'))
 
     print(globalValue.currentDB)
     create_index('create index id_index on gogo1(id)')
     create_index('create index gender_index on gogo2(gender)')
     getIndexInfo()
-    showTables()
+    print(show_tables('show tables'))
     drop_index('drop index id_index')
 
     print(select_db('select database ()'))
@@ -409,6 +412,7 @@ def main():
         insert('insert into gogo1 values('+str(i)+',zyq,G,'+str(i+31)+')')
 
     delete('delete from gogo1 where id = 1')
+    print(select('select * from gogo1 where id > 10'))
     # print(select('select * from gogo1 where id = 319'))
     globalValue.currentIndex.Save_file()
 
