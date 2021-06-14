@@ -129,11 +129,13 @@ class BPlusTree():
         if condition == 0: #等于
             temp = self.Search_key(key)
             if temp[0]:
+                res[0] = True
                 res.append([temp[1]])
         else: 
             self.fetch_nodes = []
             self.Fetch_nodes_condition(self.Trees, key, condition)
             if self.fetch_nodes:
+                res[0] = True
                 res.append(self.fetch_nodes)
         return res
 

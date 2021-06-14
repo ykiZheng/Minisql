@@ -26,7 +26,6 @@ def Initialize(index_filepath, list_filepath, data_filepath):
     fp_list.close()
     fp_data.close()
 
-
 class Index():
     def __init__(self):
         self.index_trees = {}
@@ -121,19 +120,17 @@ class Index():
 
     def Drop_field_from_table(self, table_name, column, attribute, index_list, offsets):
         for offset in offsets:
-            data_fields = self.buffer.Search_data(offset, attribute)
+            data_field = self.buffer.Search_data(offset, attribute)
             self.buffer.Delete_data(offset)
             for i in range(len(index_list)):
                 if index_list[i]:
                     BT = BPlusTree()
                     BT.Trees = self.index_trees[table_name][column[i]]
-                    for item in data_fields:
-                        BT.Delete_key(item[i])
+                    BT.Delete_key(data_field[i])
                 else:
                     NL = NormalList()
                     NL.Load_list(self.normal_list[table_name][column[i]])
-                    for item in data_fields:
-                        NL.Delete_key(item[i])
+                    NL.Delete_key(data_field[i])
 
     def Update_field_from_table(self, table_name, column, attribute, column_name, key, isindex, values, index_list):
         res = self.Drop_field_from_table(table_name, column, column_name, key, isindex, index_list)
@@ -158,11 +155,27 @@ class Index():
             res_data.append(tp_data)
         if data_offsets:
             res[0] = True
+            res.append(res_data)
         return res
 
-    def Delete_and_join(self, table_name, column, attribute, column_list, key_list, index_list, condition_list):
+    #  select * fromo table
+    def Select_all_data(self, table_name, primary_key, attribute):
+        BT = BPlusTree()
+        BT.Trees =  self.index_trees[table_name][primary_key]
+        res = [False]
+        temp = BT.Fetch_all_nodes()
+        if temp:
+            res[0] = True
+            res_data = []
+            for offset in temp:
+                data = self.buffer.Search_data(offset, attribute)
+                res_data.append(data)
+            res.append(res_data)
+        return res
+
+    def Delete_and_join(self, table_name, column, attribute, index_list, column_list, key_list, select_index_list, condition_list):
         for i in range(len(column_list)):
-            temp = self.Select_from_table(table_name,column_list[i],key_list[i],index_list[i],condition_list[i])
+            temp = self.Select_from_table(table_name,column_list[i],key_list[i],select_index_list[i],condition_list[i])
             if not i:
                 join_res = set(temp)
             else:
@@ -170,7 +183,7 @@ class Index():
                 join_res = join_res.intersection(set_temp)
         data_offsets = list(join_res)
         if data_offsets:
-            self.Drop_field_from_table(table_name, column, attribute,index_list,data_offsets)
+            self.Drop_field_from_table(table_name,column,attribute,index_list,data_offsets)
             return True
         else:
             return False
