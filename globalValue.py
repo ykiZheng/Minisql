@@ -8,4 +8,6 @@
 # 由于 from globalValue import * 只会取值并在该文件中创建临时变量而无法改变当前值
 # 为了方便单独搞了一个文件
 # import globalValue 即可使用
-currentDB = ""
+from index import *
+currentDB = None
+currentIndex = Index()

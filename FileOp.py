@@ -9,6 +9,9 @@ import os
 
 DBFiles = 'DBFiles/{}.json'  # 表路径
 index_File = 'index/{}_index.json'  # 索引路径
+index_filepath = 'IIndex/{}_index.json' 
+list_filepath = 'IIndex/{}_list.json'
+data_filepath = 'IIndex/{}_data.txt'
 log_file = 'log.txt'  # log路径
 localtime = time.asctime(time.localtime(time.time()))  # 当前时间
 
