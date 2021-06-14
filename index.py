@@ -75,7 +75,6 @@ class Index():
         all_data_offset = BT.Fetch_all_nodes()
         for it in all_data_offset:
             self.buffer.Delete_data(it)
-        self.Drop_field_from_table
         self.index_trees.pop(table_name)
         self.normal_list.pop(table_name)
 
@@ -133,7 +132,7 @@ class Index():
         if isindex:
             BT = BPlusTree()
             BT.Trees = self.index_trees[table_name][column_name]
-            res = BT.Condition_search_node(key)
+            res = BT.Condition_search_node(key, condition)
             if res[0]:
                 data_offsets = res[1]
                 for offset in data_offsets:

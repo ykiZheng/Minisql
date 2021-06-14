@@ -125,7 +125,7 @@ class BPlusTree():
 
     #条件搜索  
     def Condition_search_node(self, key, condition):
-        res = ['False']
+        res = [False]
         if condition == 0: #等于
             temp = self.Search_key(key)
             if temp[0]:

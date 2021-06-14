@@ -64,3 +64,9 @@ class NormalList():
                 if self.keys[i] >= key:
                     self.keys.pop(i)
                     self.values.pop(i)
+    
+    def Delete_key(self, key):
+        for i in range(len(self.keys)):
+            if self.keys[i] == key:
+                self.keys.pop(i)
+                self.values.pop(i)
