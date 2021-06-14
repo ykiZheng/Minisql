@@ -33,7 +33,6 @@ class Index():
         self.normal_list = {}
         self.buffer = Buffer()
     
-
     def Load_file(self, index_filepath, list_filepath, data_filepath):
         Initialize(index_filepath, list_filepath, data_filepath)
         self.index_filepath = index_filepath
@@ -91,28 +90,21 @@ class Index():
     # def Delete_index(self, table_name, column_name):
     #     pass
 
-    def Select_from_table(self, table_name, column_name, key, attribute, isindex, condition):
-        data_res = []
+    def Select_from_table(self, table_name, column_name, key, isindex, condition):
+        data_offsets = []
         if isindex:
             BT = BPlusTree()
             BT.Trees = self.index_trees[table_name][column_name]
             res = BT.Condition_search_node(key, condition)
             if res[0]:
                 data_offsets = res[1]
-                for offset in data_offsets:
-                    data_res.append(self.buffer.Search_data(offset, attribute))
-                res[1] = data_res
-            return res
         else:
             NL = NormalList()
             NL.Load_list(self.normal_list[table_name][column_name])
             res = NL.Condition_search_node(key, condition)
             if res[0]:
                 data_offsets = res[1]
-                for offset in data_offsets:
-                    data_res.append(self.buffer.Search_data(offset))
-                res[1] = data_res
-            return res
+        return data_offsets
 
     def Insert_into_table(self, table_name, column, attribute, values, index_list):
         offset = self.buffer.Insert_data(values, attribute)
@@ -127,35 +119,11 @@ class Index():
                 NL.Load_list(self.normal_list[table_name][column[i]])
                 NL.Insert_node(values[i], offset)
 
-    def Drop_field_from_table(self, table_name, column, column_name, key, isindex, index_list, condition):
-        data_fields = []
-        if isindex:
-            BT = BPlusTree()
-            BT.Trees = self.index_trees[table_name][column_name]
-            res = BT.Condition_search_node(key, condition)
-            if res[0]:
-                data_offsets = res[1]
-                for offset in data_offsets:
-                    data_fields.append(self.buffer.Search_data(offset))
-                    self.buffer.Delete_data(offset)
-                BT.Condition_delete_node(key, condition)
-            else:
-                return False
-        else:
-            NL = NormalList()
-            NL.Load_list(self.normal_list[table_name][column_name])
-            res = NL.Condition_search_node(key, condition)
-            if res[0]:
-                data_offsets = res[1]
-                for offset in data_offsets:
-                    data_fields.append(self.buffer.Search_data(offset))
-                    self.buffer.Delete_data(offset)
-                NL.Condition_delete_node(key, condition)
-            else:
-                return False
-
-        for i in range(len(index_list)):
-            if column[i] != column_name:
+    def Drop_field_from_table(self, table_name, column, attribute, index_list, offsets):
+        for offset in offsets:
+            data_fields = self.buffer.Search_data(offset, attribute)
+            self.buffer.Delete_data(offset)
+            for i in range(len(index_list)):
                 if index_list[i]:
                     BT = BPlusTree()
                     BT.Trees = self.index_trees[table_name][column[i]]
@@ -166,11 +134,43 @@ class Index():
                     NL.Load_list(self.normal_list[table_name][column[i]])
                     for item in data_fields:
                         NL.Delete_key(item[i])
-        return True
 
-    def Update_field_from_table(self, table_name, column, column_name, key, isindex, attribute, values, index_list):
+    def Update_field_from_table(self, table_name, column, attribute, column_name, key, isindex, values, index_list):
         res = self.Drop_field_from_table(table_name, column, column_name, key, isindex, index_list)
         if not res:
             return False
         self.Insert_into_table(table_name, column, attribute, values, index_list)
         return True
+
+    def Select_and_join(self, table_name, attribute, column_list, key_list, index_list, condition_list):
+        for i in range(len(column_list)):
+            temp = self.Select_from_table(table_name,column_list[i],key_list[i],index_list[i],condition_list[i])
+            if not i:
+                join_res = set(temp)
+            else:
+                set_temp = set(temp)
+                join_res = join_res.intersection(set_temp)
+        data_offsets = list(join_res)
+        res = [False]
+        res_data = []
+        for offset in data_offsets:
+            tp_data = self.buffer.Search_data(offset, attribute)
+            res_data.append(tp_data)
+        if data_offsets:
+            res[0] = True
+        return res
+
+    def Delete_and_join(self, table_name, column, attribute, column_list, key_list, index_list, condition_list):
+        for i in range(len(column_list)):
+            temp = self.Select_from_table(table_name,column_list[i],key_list[i],index_list[i],condition_list[i])
+            if not i:
+                join_res = set(temp)
+            else:
+                set_temp = set(temp)
+                join_res = join_res.intersection(set_temp)
+        data_offsets = list(join_res)
+        if data_offsets:
+            self.Drop_field_from_table(table_name, column, attribute,index_list,data_offsets)
+            return True
+        else:
+            return False
