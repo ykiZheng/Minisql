@@ -170,11 +170,11 @@ def dropTable(tableName__):
                 dropIndex(IndexName,False)
                 store(schemas, path)
                 globalValue.currentIndex.Drop_table(tableName__, Prikey)
-                log('[Drop Table]\t删除表 '+tableName__+' 成功')
             else:
                 dropIndex(IndexName, True)
         schemas.pop(tableName__)
         store(schemas,path)
+        log('[Drop Table]\t删除表 '+tableName__+' 成功')
                 # log('[drop table]\t不能删去主键索引')
 
         
@@ -243,6 +243,9 @@ def createIndex(indexName, tableName, attri):
 
         if tableName in schemas:
             if existsAttr(tableName, attri):
+                if IndexOfAttr(tableName,attri):
+                    log('[create Index]\t索引 '+indexName+'创建失败，本程序暂不支持且不建议在同一列上建立多个索引')
+                    return False
                 # for name in Indexs:
                 #     if Indexs[name]['attri'] == attri and Indexs[name]['table'] == tableName:
                 #         Indexs.pop(name)
@@ -400,7 +403,7 @@ def IndexOfAttr(tableName, attr):
     table = schemas[tableName]
     index = table['index']
     for i, pair in enumerate(index):
-        if pair[0] == attr:
+        if pair[1] == attr:
             return True
             break
     return False
