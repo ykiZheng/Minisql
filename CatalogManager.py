@@ -150,7 +150,7 @@ def createTable(tableName__, attributes,  types, priKey, ifUniques):
         store(schemas, path)
 
         globalValue.currentIndex.Create_table(tableName__, priKey, attributes)
-        createIndex('PriKey_'+tableName__+'_'+priKey,tableName__,priKey)
+        createIndex('priKey_'+tableName__+'_'+priKey,tableName__,priKey)
         log('[Create Table]\t创建表 ' + tableName__ + ' 成功')
     else:
         log('[Create Table]\t已存在该表名 ' + tableName__)
@@ -354,7 +354,8 @@ def getIndexInfo():
     print('当前本数据库', globalValue.currentDB, '拥有索引如下：')
     indexFile = index_File.format(globalValue.currentDB)
     Indexs = load(indexFile)
-    print(Indexs)
+    for index in Indexs:
+        print('\t'+index)
 
 
 def existsAttr(tableName, attri):
