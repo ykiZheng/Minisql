@@ -155,7 +155,7 @@ def drop_table(query):
 def create_index(query):
     match = re.match(
         r'^create\s+index\s+(.+)+on\s+(.+)\s*\((.+)\)$', query, re.S)
-    # r'^create\s+index\s+([a-z][a-z0-9_]*)+on\s+([a-z][a-z0-9_]*)\s*\(([a-z][a-z0-9_]*)\)$', query, re.S)
+
     if match:
         indexName = match.group(1).strip()
         tableName = match.group(2).strip()
@@ -279,6 +279,9 @@ def delete(query):
         if existsTable(tableName):
             schema = getTable(tableName)
             isPri = schema['primary_key']
+            Types = schema['types']
+            Attrs = schema['attrs']
+            index = schema['index']
             unique = []
             isindex = []
             types = []
@@ -287,17 +290,18 @@ def delete(query):
             attrs = subCond['attrs']
             keys = subCond['keys']
             ops = subCond['ops']
-            for attr in attrs:
-                if not existsAttr(tableName,attr):
-                    raise MiniSQLError('[delete]\t表 '+tableName+' 中不存在该属性 '+attr)
+            for i in range(0,len(attrs)):
+                if not existsAttr(tableName,attrs[i]):
+                    raise MiniSQLError('[delete]\t表 '+tableName+' 中不存在该属性 '+attrs[i])
                 else:
-                    unique.append(UniqueOfAttr(tableName,attr))
-                    isindex.append(IndexOfAttr(tableName,attr))
-                    types.append(TypeOfAttr(tableName,attr))
-            
+                    unique.append(UniqueOfAttr(tableName,attrs[i]))
+                    isindex.append(IndexOfAttr(tableName,attrs[i]))
+                    Type = TypeOfAttr(tableName,attrs[i])
+                    types.append(Type)
+                    keys[i] = TypeChange(keys[i],Type)
 
-            #------------------------------有问题，待改，等待新接口
-            return globalValue.currentIndex.Drop_field_from_table(tableName, attrs, isPri, keys, isindex, unique,ops)
+            return globalValue.currentIndex.Delete_and_join(tableName,Attrs,Types,index,attrs,keys,isindex,ops)
+
         else:
             raise MiniSQLError('[delete]\t不存在该表'+tableName)
     else:
@@ -310,13 +314,29 @@ def delete(query):
             if existsTable(tableName):
                 schema = getTable(tableName)
                 isPri = schema['primary_key']
+                Types = schema['types']
+                Attrs = schema['attrs']
+                index = schema['index']
+
+                #----------------------------------有问题
                 #----------------------------------等新接口
-                return globalValue.currentIndex.Drop_field_from_table(tableName, [], isPri, [], [], [],-1)
+                IIndex = TypeChange('1',Types[0])
+                ifIndex = IndexOfAttr(tableName,Attrs[0])
+                flag1 = globalValue.currentIndex.Delete_and_join(tableName,Attrs,Types,index,[Attrs[0]],[IIndex],[ifIndex],[0])
+                flag2 = globalValue.currentIndex.Delete_and_join(tableName,Attrs,Types,index,[Attrs[0]],[IIndex],[ifIndex],[1])
+                return  flag1 or flag2
             else:
                 raise MiniSQLError('[delete]\t不存在该表 '+tableName)
         else:
             raise MiniSQLSyntaxError('Syntax Error in: '+ query)
 
+def TypeChange(key, Type):
+    if Type == -1:
+        return int(key)
+    elif Type == 0:
+        return float(key)
+    elif Type <= 255:
+        return key 
 
 def select(query):
     match = re.match(
@@ -328,6 +348,7 @@ def select(query):
         condition = match.group(3).strip()
 
         if existsTable(tableName):
+
             uniques = []
             ifindexs = []
             types = []
@@ -335,16 +356,19 @@ def select(query):
             attrs =subcon['attrs']
             keys = subcon['keys']
             ops = subcon['ops']
-            for attr in attrs:
-                if not existsAttr(tableName,attr):
-                    raise MiniSQLError('[select]\t表 '+tableName+' 中不存在该属性 '+attr)
+            for i in range(0,len(attrs)):
+                if not existsAttr(tableName,attrs[i]):
+                    raise MiniSQLError('[select]\t表 '+tableName+' 中不存在该属性 '+attrs[i])
                 else:
-                    uniques.append(UniqueOfAttr(tableName,attr))
-                    ifindexs.append(IndexOfAttr(tableName,attr))
-                    types.append(TypeOfAttr(tableName,attr))
+                    uniques.append(UniqueOfAttr(tableName,attrs[i]))
+                    ifindexs.append(IndexOfAttr(tableName,attrs[i]))
+                    Type = TypeOfAttr(tableName,attrs[i])
+                    types.append(Type)
+                    keys[i] = TypeChange(keys[i],Type)
 
             schema = getTable(tableName)
             isPri = schema['primary_key']
+            Types = schema['types']
          
         else:
             raise MiniSQLError('[select]\t不存在该表 '+tableName)
@@ -358,10 +382,8 @@ def select(query):
             tableName = match.group(2).strip()
             schema = getTable(tableName)
             isPri = schema['primary_key']
-            ifindexs = []
-            attrs = []
-            types = []
-            keys = []
+            attrs = schema['attrs']
+            Types = schema['types']
             ops = -1
 
         else:
@@ -372,7 +394,10 @@ def select(query):
         # for c in cols:
         #     cols.append(c.strip())
     else:
-        select_res = globalValue.currentIndex.Select_from_table(tableName,isPri,types,keys,ifindexs,ops)
+        if ops == -1:
+            select_res = globalValue.currentIndex.Select_all_data(tableName,isPri,Types)
+        else:
+            select_res = globalValue.currentIndex.Select_and_join(tableName,Types,attrs,keys,ifindexs,ops)
         
         if select_res:
             output = {}
@@ -380,8 +405,7 @@ def select(query):
             output['select_res'] = select_res
             return output
         else:
-            log('[select]\tNot Found')
-    # return Select(cols, tableName, condition,buf)
+            return False
 
 
 def main():
@@ -389,18 +413,20 @@ def main():
     clear_all()
     create_db('create database lll')
     create_db('create database yourdb')
+    print(show_dbs('show databases'))
     use_db('use yourdb')
     create_table(
         'create table gogo1(id int, stuName char(20), gender char(1), seat int)')
     create_table(
         'create table gogo2(id int, stuName char(20), gender char(1), seat int,primary key (id))')
+    
+
+    print(globalValue.currentDB)
+    create_index('create index stuName_index on gogo1(stuName)')
+    create_index('create index gender_index on gogo1(gender)')
     print(show_tables('show tables'))
     drop_table('drop table gogo2')
     print(show_tables('show tables'))
-
-    print(globalValue.currentDB)
-    create_index('create index id_index on gogo1(id)')
-    create_index('create index gender_index on gogo2(gender)')
     getIndexInfo()
     print(show_tables('show tables'))
     drop_index('drop index id_index')
@@ -410,9 +436,47 @@ def main():
     # print(select('select * from gogo1'))
     for i in range(1,1000):
         insert('insert into gogo1 values('+str(i)+',zyq,G,'+str(i+31)+')')
+    select_res = select('select * from gogo1 where id < 10')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     delete('delete from gogo1 where id = 1')
-    print(select('select * from gogo1 where id > 10'))
+    select_res = select('select * from gogo1 where id < 10')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+    delete('delete from gogo1 where id > 90')
+    delete('delete from gogo1 where id < 70 and id > 30')
+    select_res = select('select * from gogo1')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+    delete('delete from gogo1')
+    select_res = select('select * from gogo1')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
     # print(select('select * from gogo1 where id = 319'))
     globalValue.currentIndex.Save_file()
 
