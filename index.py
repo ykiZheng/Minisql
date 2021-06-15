@@ -190,3 +190,20 @@ class Index():
             return True
         else:
             return False
+
+    #删除所有数据
+    def Delete_all_data(self, table_name, column, primary_key, index_list):
+        BT = BPlusTree()
+        BT.Trees = self.index_trees[table_name][primary_key]
+        res = BT.Fetch_all_nodes()
+        if res:
+            for offset in res:
+                self.buffer.Delete_data(offset)
+        else:
+            return False
+        for i in range(len(column)):
+            if index_list[i]:
+                self.index_trees[table_name][column[i]] = {}
+            else:
+                self.normal_list[table_name][column[i]] = {}
+        return True
