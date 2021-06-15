@@ -166,7 +166,7 @@ class Index():
         BT.Trees =  self.index_trees[table_name][primary_key]
         res = [False]
         temp = BT.Fetch_all_nodes()
-        print(temp)
+        # print(temp)
         if temp:
             res[0] = True
             res_data = []
