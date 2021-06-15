@@ -372,24 +372,26 @@ class BPlusTree():
 #     BT.BuildNewBPTree()
 #     # for i in range(10):
 #     #     BT.Insert_node(i, i)
-#     for i in range(20):
-#         BT.Insert_node(i, i)
+#     for i in range(1,30):
+#         BT.Insert_node(i, i+3)
     
-    # search(12, 0)
-    # search(12, 1)
-    # search(12, 2)
-    # search(12, 3)
-    # search(12, 4)
-    # search(12, 5)
+#     # search(12, 0)
+#     # search(12, 1)
+#     # search(12, 2)
+#     # search(12, 3)
+#     # search(12, 4)
+#     # search(12, 5)
 
-    # BT.Condition_delete_node(11, 0)
-    # BT.Condition_delete_node(11, 1)
-    # BT.Condition_delete_node(11, 2)
-    # BT.Condition_delete_node(11, 3)
-    # BT.Condition_delete_node(11, 4)
-    # BT.Condition_delete_node(11, 5)
+#     # BT.Condition_delete_node(11, 0)
+#     # BT.Condition_delete_node(11, 1)
+#     # BT.Condition_delete_node(11, 2)
+#     # BT.Condition_delete_node(11, 3)
+#     # BT.Condition_delete_node(11, 4)
+#     # BT.Condition_delete_node(11, 5)
+#     for i in range(4,20):
+#         BT.Delete_key(i)
 
-    # res = BT.Fetch_all_nodes()
-    # print(res)
+#     res = BT.Fetch_all_nodes()
+#     print(res)
 
-    # BT.SaveBPTree('BT.json')
+#     BT.SaveBPTree('BT.json')

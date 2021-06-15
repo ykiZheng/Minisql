@@ -26,6 +26,7 @@ def Initialize(index_filepath, list_filepath, data_filepath):
     fp_list.close()
     fp_data.close()
 
+
 class Index():
     def __init__(self):
         self.index_trees = {}
@@ -127,6 +128,7 @@ class Index():
                     BT = BPlusTree()
                     BT.Trees = self.index_trees[table_name][column[i]]
                     BT.Delete_key(data_field[i])
+                    self.index_trees[table_name][column[i]] = BT.Trees
                 else:
                     NL = NormalList()
                     NL.Load_list(self.normal_list[table_name][column[i]])
@@ -164,6 +166,7 @@ class Index():
         BT.Trees =  self.index_trees[table_name][primary_key]
         res = [False]
         temp = BT.Fetch_all_nodes()
+        print(temp)
         if temp:
             res[0] = True
             res_data = []
