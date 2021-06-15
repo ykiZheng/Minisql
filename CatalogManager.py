@@ -98,11 +98,12 @@ def printDB():
     # print('当前本机拥有数据库如下：')
     file = []
     for root, dirs, files in os.walk("DBFiles"):
-        file.append(files)
+        for f in files:
+            file.append(f.strip('.json'))
         # print("root", root)  # 当前目录路径
         # print("dirs", dirs)  # 当前路径下所有子目录
         # print("files", files)  # 当前路径下所有非目录子文件
-    return files
+    return file
 # ---------------------------------
 # 表操作
 # --------------------------------
@@ -149,7 +150,7 @@ def createTable(tableName__, attributes,  types, priKey, ifUniques):
         store(schemas, path)
 
         globalValue.currentIndex.Create_table(tableName__, priKey, attributes)
-        createIndex('PriKey_'+priKey,tableName__,priKey)
+        createIndex('PriKey_'+tableName__+'_'+priKey,tableName__,priKey)
         log('[Create Table]\t创建表 ' + tableName__ + ' 成功')
     else:
         log('[Create Table]\t已存在该表名 ' + tableName__)
@@ -302,10 +303,18 @@ def dropIndex(indexName__, ifPri):
         attri = Indexs[indexName__]['attri']
         table = schemas[tableName]
 
-        if table['primary_key'] == attri and ifPri == False:
-            log('[drop Index]\t删除索引失败，无法删除主键索引 ' + indexName__,)
-            return False
+        if table['primary_key'] == attri:
+            if ifPri == False:
+                log('[drop Index]\t删除索引失败，无法删除主键索引 ' + indexName__)
+                return False
+            else:
+                Indexs.pop(indexName__)
+                log('[drop Index]\t删除索引 ' + indexName__ + ' 成功')
+                store(schemas, path)
+                store(Indexs, indexFile)
+                return True
         Indexs.pop(indexName__)
+        
 
         
         index = table['index']
