@@ -376,9 +376,17 @@ def delete(query):
 
 def TypeChange(key, Type):
     if Type == -1:
-        return int(key)
+        try:
+            key = int(key)
+            return key
+        except:
+            return False
     elif Type == 0:
-        return float(key)
+        try:
+            key = float(key)
+            return key
+        except:
+            return False
     elif Type <= 255:
         return key
 
@@ -410,7 +418,11 @@ def select(query):
                     ifindexs.append(IndexOfAttr(tableName, attrs[i]))
                     Type = TypeOfAttr(tableName, attrs[i])
                     types.append(Type)
-                    keys[i] = TypeChange(keys[i], Type)
+                    x = TypeChange(keys[i], Type)
+                    if x == False:
+                        # 类型不匹配
+                        return False
+                    keys[i] = x
 
             schema = getTable(tableName)
             isPri = schema['primary_key']
@@ -621,133 +633,96 @@ def test():
     use_db('use mydb')
     print(select_db('select database()'))
 
-    create_table('create table person(height float unique, pid int, name char(32), identity char(128) unique, age int unique, primary key(pid))')
+    create_table('create table person(height float, pid int, name char(32), identity char(128), age int, primary key(pid))')
     print(globalValue.currentIndex.buffer.fp.closed)
-    insert('insert into person values (171.1, 1, "person1", "000001", 81)')
-    insert('insert into person values (162.1, 2, "person2", "000002", 19)')
-    insert('insert into person values (163.3, 3, "person3", "000003", 20)')
-    insert('insert into person values (174.9, 4, "person4", "000004", 21)')
-    insert('insert into person values (175.0, 5, "person5", "000005", 22)')
-    insert('insert into person values (176.1, 6, "person6", "000006", 23)')
-    insert('insert into person values (177.2, 7, "person7", "000007", 24)')
-    insert('insert into person values (178.1, 8, "person8", "000008", 25)')
-    insert('insert into person values (179.1, 9, "person9", "000009", 26)')
-    insert('insert into person values (180.1, 10, "person10", "000010", 27)')
-    insert('insert into person values (181.1, 11, "person11", "000011", 28)')
-    insert('insert into person values (182.1, 12, "person12", "000012", 29)')
-    insert('insert into person values (183.1, 13, "person13", "000013", 30)')
-    insert('insert into person values (184.3, 14, "person14", "000014", 31)')
-    insert('insert into person values (185.1, 15, "person15", "000015", 32)')
-    insert('insert into person values (186.4, 16, "person16", "000016", 33)')
-    insert('insert into person values (187.1, 17, "person17", "000017", 34)')
-    insert('insert into person values (188.1, 18, "person18", "000018", 35)')
-    insert('insert into person values (189.1, 19, "person19", "000019", 36)')
-    insert('insert into person values (190.1, 20, "person20", "000020", 37)')
+    insert('insert into person values (175.1, 1, "Person1", "000001", 18)')
+    insert('insert into person values (165.1, 2, "Person2", "000002", 19)')
+    insert('insert into person values (165.3, 3, "Person3", "000003", 20)')
+    insert('insert into person values (175.9, 4, "Person4", "000004", 21)')
+    insert('insert into person values (175.0, 5, "Person5", "000005", 22)')
+    insert('insert into person values (172.1, 6, "Person6", "000006", 23)')
+    insert('insert into person values (175.2, 7, "Person7", "000007", 24)')
+    insert('insert into person values (175.1, 8, "Person8", "000008", 25)')
+    insert('insert into person values (174.1, 9, "Person9", "000009", 26)')
+    insert('insert into person values (175.1, 10, "Person10", "000010", 27)')
+    insert('insert into person values (172.1, 11, "Person11", "000011", 28)')
+    insert('insert into person values (175.1, 12, "Person12", "000012", 29)')
+    insert('insert into person values (174.1, 13, "Person13", "000013", 30)')
+    insert('insert into person values (174.1, 14, "Person14", "000014", 31)')
+    insert('insert into person values (175.1, 15, "Person15", "000015", 32)')
+    insert('insert into person values (173.1, 16, "Person16", "000016", 33)')
+    insert('insert into person values (175.1, 17, "Person17", "000017", 34)')
+    insert('insert into person values (175.1, 18, "Person18", "000018", 35)')
+    insert('insert into person values (179.1, 19, "Person19", "000019", 36)')
+    insert('insert into person values (171.1, 20, "Person20", "000020", 37)')
 
-        
-
-    # delete('delete from person where pid = 15')
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # delete('delete from person where height = 173.5')
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # print(delete('delete from person where age = 20 and height > 175.5'))
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # print(delete('delete from person where height = 171.1'))
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # print(delete('delete from person where name = "Person20"'))
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # print(delete('delete from person where identity = "000017"'))
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # print(delete('delete from person where identity = "000016" and age = 29'))
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-
-    # select_res = select('select * from person where height <= 176.3')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # select_res = select('select * from person')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
-    # 有数据建索引
-    create_index('create index idx_height on person(height)')
-    create_index('create index idx_identity on person(identity)')
-    create_index('create index idx_age on person(age)')
-
-
-
-
-    drop_index('drop index idx_height')
-    drop_index('drop index idx_identity')
-    drop_index('drop index idx_age')
-
+    select_res = select('select * from person where age = 25')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
     drop_table('drop table person')
+    
+    print(delete('delete from person where pid = 15'))
+    select_res = select('select * from person')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+
+    print(delete('delete from person where height = 173.5'))
+    select_res = select('select * from person')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+
+    print(delete('delete from person where age = 20 and height > 175.5'))
+    select_res = select('select * from person')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+
+    print(delete('delete from person where height = 175.1'))
+    select_res = select('select * from person')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+
+    print(delete('delete from person where height = "Person20"'))
+    select_res = select('select * from person')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
+
+    
     globalValue.currentIndex.Save_file()
 
 if __name__ == '__main__':

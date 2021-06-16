@@ -407,10 +407,13 @@ def dropIndex(indexName__, ifPri):
                     #         data = self.buffer.Search_data(offset, attribute)
                     #         res_data.append(data)
                     #     res.append(res_data)
+                    NL = NormalList()
+                    NL.Load_list(globalValue.currentIndex.normal_list[tableName][attri])
+                    for i in range(0,len(keys)):
+                        NL.Insert_node(keys[i],values[i])
 
                     if attri in globalValue.currentIndex.index_trees[tableName]:
-                        globalValue.currentIndex.index_trees[tableName].pop(
-                            attri)
+                        globalValue.currentIndex.index_trees[tableName].pop(attri)
 
                     norm = {'keys':keys,'values':values}
                     globalValue.currentIndex.normal_list[tableName][attri] = norm

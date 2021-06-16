@@ -11,7 +11,7 @@ class NormalList():
     def Condition_search_node(self, key, condition):
         res = [False]
         temp = []
-        for i in range(len(self.keys)):
+        for i in range(0,len(self.keys)):
             if condition == 0:
                 if self.keys[i] == key:
                     temp.append(self.values[i])
