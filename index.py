@@ -132,7 +132,7 @@ class Index():
                 else:
                     NL = NormalList()
                     NL.Load_list(self.normal_list[table_name][column[i]])
-                    NL.Delete_key(data_field[i])
+                    NL.Delete_value(offset)
 
     def Update_field_from_table(self, table_name, column, attribute, column_name, key, isindex, values, index_list):
         res = self.Drop_field_from_table(table_name, column, column_name, key, isindex, index_list)

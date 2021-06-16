@@ -80,3 +80,10 @@ class NormalList():
                 self.keys.pop(i)
                 self.values.pop(i)
                 return
+
+    def Delete_value(self, value):
+        for i in range(len(self.values)):
+            if self.values[i] == value:
+                self.values.pop(i)
+                self.keys.pop(i)
+                return
