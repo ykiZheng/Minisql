@@ -167,7 +167,7 @@ def dropTable(tableName__):
         Prikey = schemas[tableName__]['primary_key']
         for IndexName, col in index:
             if col != Prikey:
-                dropIndex(IndexName, False)
+                dropIndex(IndexName, True)
                 store(schemas, path)
                 
             else:
@@ -304,7 +304,7 @@ def convert(type):
 # ------------------------
 
 
-def createIndex(indexName, tableName, attri, ifPri):
+def createIndex(indexName, tableName, attri, ifDrop):
     indexFile = index_File.format(globalValue.currentDB)
     path = DBFiles.format(globalValue.currentDB)
     schemas = load(path)
@@ -333,7 +333,7 @@ def createIndex(indexName, tableName, attri, ifPri):
                 # 更新表结构
                 schemas[tableName]['index'].append([indexName, attri])
 
-                if ifPri == False:
+                if ifDrop == False:
                 # --------------------需要Index的接口
                     BT = BPlusTree()
                     BT.BuildNewBPTree()
@@ -362,7 +362,7 @@ def createIndex(indexName, tableName, attri, ifPri):
             log('[create Index]\t索引创建失败，当前数据库不存在表 ' + tableName)
 
 
-def dropIndex(indexName__, ifPri):
+def dropIndex(indexName__, ifDrop):
     indexFile = index_File.format(globalValue.currentDB)
     path = DBFiles.format(globalValue.currentDB)
     schemas = load(path)
@@ -376,54 +376,44 @@ def dropIndex(indexName__, ifPri):
         attri = Indexs[indexName__]['attri']
         table = schemas[tableName]
 
-        if table['primary_key'] == attri:
-            if ifPri == False:
+        # 删除表
+        if ifDrop == True:
+            Indexs.pop(indexName__)
+            log('[drop Index]\t删除索引 ' + indexName__ + ' 成功')
+            store(schemas, path)
+            store(Indexs, indexFile)
+            return True
+        else:
+            if table['primary_key'] == attri:
                 log('[drop Index]\t删除索引失败，无法删除主键索引 ' + indexName__)
                 return False
             else:
                 Indexs.pop(indexName__)
-                log('[drop Index]\t删除索引 ' + indexName__ + ' 成功')
-                store(schemas, path)
-                store(Indexs, indexFile)
-                return True
-        Indexs.pop(indexName__)
 
-        index = table['index']
-        attri = []
-        if index:
-            for i, pair in enumerate(index):
-                if pair[0] == indexName__:
-                    attri = pair[1]
-                    index.pop(i)
-                    BT = BPlusTree()
-                    BT.Trees = globalValue.currentIndex.index_trees[tableName][attri]
-                    values = list(BT.Fetch_all_nodes_value())
-                    keys = list(BT.Fetch_all_nodes())
+                index = table['index']
+                attri = []
+                if index:
+                    for i, pair in enumerate(index):
+                        if pair[0] == indexName__:
+                            attri = pair[1]
+                            index.pop(i)
+                            BT = BPlusTree()
+                            BT.Trees = globalValue.currentIndex.index_trees[tableName][attri]
+                            values = list(BT.Fetch_all_nodes_value())
+                            keys = list(BT.Fetch_all_nodes())
 
-                    # if temp:
-                    #     res[0] = True
-                    #     res_data = []
-                    #     for offset in temp:
-                    #         data = self.buffer.Search_data(offset, attribute)
-                    #         res_data.append(data)
-                    #     res.append(res_data)
-                    NL = NormalList()
-                    NL.Load_list(globalValue.currentIndex.normal_list[tableName][attri])
-                    for i in range(0,len(keys)):
-                        NL.Insert_node(keys[i],values[i])
+                        
+                            NL = NormalList()
+                            # NL.Load_list(globalValue.currentIndex.normal_list[tableName])
+                            for i in range(0,len(keys)):
+                                NL.Insert_node(keys[i],values[i])
+                            globalValue.currentIndex.normal_list[tableName][attri] = {'keys':NL.keys,'values':NL.values}
+                            if attri in globalValue.currentIndex.index_trees[tableName]:
+                                globalValue.currentIndex.index_trees[tableName].pop(attri)
 
-                    if attri in globalValue.currentIndex.index_trees[tableName]:
-                        globalValue.currentIndex.index_trees[tableName].pop(attri)
-
-                    norm = {'keys':keys,'values':values}
-                    globalValue.currentIndex.normal_list[tableName][attri] = norm
-
-                    # table['attrs'].append(attri)
-                    # table['types'].append(convertToString(TypeOfAttr(tableName,attri)))
-                    # table['uniques'].append(UniqueOfAttr(tableName,attri))
-
-                    # table
-                    break
+                            norm = {'keys':keys,'values':values}
+                            globalValue.currentIndex.normal_list[tableName][attri] = norm
+                            break
 
             store(schemas, path)
             store(Indexs, indexFile)
