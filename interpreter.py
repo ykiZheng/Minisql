@@ -161,7 +161,7 @@ class miniSQL(cmd.Cmd):
                 log(str(e))
     def do_insert(self,args):
         args='insert '+args
-        args=args.replace(';','').replace("'",'').replace('"','')
+        args=args.replace(';','').replace("'",'')
         try:
             time_start = time.time()
             insert(args.replace(';','').lower())
@@ -263,7 +263,7 @@ def exec_from_file(filename):#从文件读取命令
         if comand_.split(' ')[0] == 'insert':
             try:
                 timestart = time.time()
-                insert(comand_.replace('"','').replace("'",""))
+                insert(comand_.replace("'",""))
                 timeend = time.time()
                 print("Time elapsed : %fs." % (timeend - timestart))
             except MiniSQLError as e:
