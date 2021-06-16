@@ -60,6 +60,9 @@ def main():
     path = "DBFiles\myDB.json"
     schemas = load(path)
     print(schemas)
+    schemas = {}
+    store(schemas,path)
+    log('[FileOp测试]233333333333333++++++')
 
 
 if __name__ == "__main__":

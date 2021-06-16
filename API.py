@@ -266,7 +266,7 @@ def seperateCondition(query, condition):
                     keys.append(key)
                 else:
                     match = re.match(
-                        r'^([a-z0-9][a-z0-9_]*)\s*>\s*\"*(.+)\"*$', subCond, re.S)
+                        r'^([a-z0-9][a-z0-9_]*)\s*>=\s*\"*(.+)\"*$', subCond, re.S)
                     # 情况4：大于等于
                     if match:
                         attrs.append(match.group(1).strip())
@@ -277,8 +277,8 @@ def seperateCondition(query, condition):
                         keys.append(key)
                     else:
                         match = re.match(
-                            r'^([a-z0-9][a-z0-9_]*)\s*<=\s*\"*(.+)\"*$', subCond, re.S)
-                        # 情况5：小于等于
+                            r'^([a-z0-9][a-z0-9_]*)\s*<\s*\"*(.+)\"*$', subCond, re.S)
+                        # 情况5：小于
                         if match:
                             attrs.append(match.group(1).strip())
                             ops.append(2)
@@ -288,8 +288,8 @@ def seperateCondition(query, condition):
                             keys.append(key)
                         else:
                             match = re.match(
-                                r'^([a-z0-9][a-z0-9_]*)\s*>=\s*\"*(.+)\"*$', subCond, re.S)
-                            # 情况6：大于等于
+                                r'^([a-z0-9][a-z0-9_]*)\s*>\s*\"*(.+)\"*$', subCond, re.S)
+                            # 情况6：大于
                             if match:
                                 attrs.append(match.group(1).strip())
                                 ops.append(3)
@@ -533,40 +533,14 @@ def main():
     insert('insert into person values (189.1, 19, "Person19", "000019", 36)')
     insert('insert into person values (190.1, 20, "Person20", "000020", 37)')
 
+    # 有数据建索引
     create_index('create index idx_height on person(height)')
     create_index('create index idx_identity on person(identity)')
     create_index('create index idx_age on person(age)')
 
     getIndexInfo()
 
-    select_res = select('select * from person where age > 24')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
-    select_res = select('select * from person where identity = "Person15"')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
 
-    select('select * from person where height <= 176.3')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
     # 删除主键
     # drop_index('drop index priKey_gogo1_id')
     getIndexInfo()
@@ -583,86 +557,86 @@ def main():
         print('\t'+table)
 
     # 查找空表，不含 where 语句
-    # select_res = (select('select * from gogo1'))
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
+    select_res = (select('select * from gogo1'))
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     # 插入 1000 条语句
-    # for i in range(1, 1000):
-    #     insert('insert into gogo1 values('+str(i)+',zyq,G,'+str(i+31)+')')
+    for i in range(1, 1000):
+        insert('insert into gogo1 values('+str(i)+',zyq,G,'+str(i+31)+')')
 
-    # select_res = select('select * from gogo1 where id < 10')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
+    select_res = select('select * from gogo1 where id < 10')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     # 删除语句含有 where，单条
-    # delete('delete from gogo1 where id = 1')
-    # select_res = select('select * from gogo1 where id < 10')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
+    delete('delete from gogo1 where id = 1')
+    select_res = select('select * from gogo1 where id < 10')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     # 删除语句含有 where，多条，大量
-    # delete('delete from gogo1 where id > 90')
+    delete('delete from gogo1 where id > 90')
 
     # 查询语句含有 where，仅一返回结果
-    # select_res = select('select * from gogo1 where id >= 90')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
+    select_res = select('select * from gogo1 where id >= 90')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     # 删除语句含有 where，多条，含有 and
-    # delete('delete from gogo1 where id < 80 and id > 30 and id <> 55')
+    delete('delete from gogo1 where id < 80 and id > 30 and id <> 55')
 
     # 查询语句不含where，全部输出
-    # select_res = select('select * from gogo1')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
+    select_res = select('select * from gogo1')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     # 删除语句不含 where，表内数据清空
     # delete('delete from gogo1')
 
     # 查询空表，不含 where
-    # select_res = select('select * from gogo1')
-    # if select_res['select_res'][0]:
-    #     temp = select_res['select_res'][1]
-    #     table_student = PrettyTable(select_res['attrs'])
-    #     for row in temp:
-    #         table_student.add_row(row)
-    #     print(table_student)
-    # else:
-    #     print('Not Found')
+    select_res = select('select * from gogo1')
+    if select_res['select_res'][0]:
+        temp = select_res['select_res'][1]
+        table_student = PrettyTable(select_res['attrs'])
+        for row in temp:
+            table_student.add_row(row)
+        print(table_student)
+    else:
+        print('Not Found')
 
     # 查询空表，含有 where
-    # # print(select('select * from gogo1 where id <> 319'))
-    # globalValue.currentIndex.Save_file()
+    globalValue.currentIndex.Save_file()
 
 
 if __name__ == '__main__':

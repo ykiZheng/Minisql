@@ -22,6 +22,7 @@ def clear_all():
 # 数据库操作
 # ---------------------
 
+
 def createDB(DBName__):
     path = DBFiles.format(DBName__)
     if os.path.exists(path):
@@ -50,7 +51,8 @@ def createDB(DBName__):
         fp.close()
 
         index = Index()
-        index.Load_file(index_filepath.format(DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
+        index.Load_file(index_filepath.format(DBName__), list_filepath.format(
+            DBName__), data_filepath.format(DBName__))
         log('[create DB]\t创建数据库 '+DBName__+' 成功')
 
 
@@ -79,13 +81,14 @@ def dropDB(DBName__):
 
 
 def SwitchToDB(DBName__):
-    
+
     path = DBFiles.format(DBName__)
     if os.path.exists(path):
         globalValue.currentDB = DBName__
         print('#当前切换到', DBName__, '库')
-        globalValue.currentIndex.Load_file(index_filepath.format(DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
-        
+        globalValue.currentIndex.Load_file(index_filepath.format(
+            DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
+
     else:
         log('#error: 切换数据库失败，当前不存在该数据库名: '+DBName__)
 
@@ -104,32 +107,27 @@ def printDB():
         # print("dirs", dirs)  # 当前路径下所有子目录
         # print("files", files)  # 当前路径下所有非目录子文件
     return file
+
+
+def showTables():
+    DBName__ = globalValue.currentDB
+    print('当前本数据库', DBName__, '拥有表如下：')
+    try:
+        path = DBFiles.format(DBName__)
+        # "DBFiles\\"+currentDB+".json"
+        schemas = load(path)
+        names = []
+        for name in schemas:
+            names.append(name)
+            # print(name)
+        return names
+    except FileNotFoundError:
+        schemas = None
+        return False
+
 # ---------------------------------
 # 表操作
 # --------------------------------
-
-def convertToString(digit):
-    if digit == -1:
-        return 'int'
-    elif digit == 0:
-        return 'float'
-    else:
-        return 'char('+digit+')'
-def convert(type):
-    if type == 'int':
-        return -1
-    elif type == 'float':
-        return 0
-    else:
-        match = re.match(r'^char\((\d+)\)$', type, re.S)
-        if match:
-            n = int(match.group(1))
-            if n >= 1 and n <= 255:
-                return n
-            else:
-                return MiniSQLError('char(n): n is out of range [1, 255]')
-        else:
-            raise MiniSQLSyntaxError('Syntax Error in type {} '.format(type))
 
 
 def createTable(tableName__, attributes,  types, priKey, ifUniques):
@@ -150,7 +148,7 @@ def createTable(tableName__, attributes,  types, priKey, ifUniques):
         store(schemas, path)
 
         globalValue.currentIndex.Create_table(tableName__, priKey, attributes)
-        createIndex('priKey_'+tableName__+'_'+priKey,tableName__,priKey)
+        createIndex('priKey_'+tableName__+'_'+priKey, tableName__, priKey)
         log('[Create Table]\t创建表 ' + tableName__ + ' 成功')
     else:
         log('[Create Table]\t已存在该表名 ' + tableName__)
@@ -168,37 +166,18 @@ def dropTable(tableName__):
         Prikey = schemas[tableName__]['primary_key']
         for IndexName, col in index:
             if col != Prikey:
-                dropIndex(IndexName,False)
+                dropIndex(IndexName, False)
                 store(schemas, path)
                 globalValue.currentIndex.Drop_table(tableName__, Prikey)
             else:
                 dropIndex(IndexName, True)
         schemas.pop(tableName__)
-        store(schemas,path)
+        store(schemas, path)
         log('[Drop Table]\t删除表 '+tableName__+' 成功')
-                # log('[drop table]\t不能删去主键索引')
-
-        
+        # log('[drop table]\t不能删去主键索引')
 
     else:
         log('[Drop Table]\t删除失败，不存在该表名 ' + tableName__)
-
-
-def showTables():
-    DBName__ = globalValue.currentDB
-    print('当前本数据库', DBName__, '拥有表如下：')
-    try:
-        path = DBFiles.format(DBName__)
-        # "DBFiles\\"+currentDB+".json"
-        schemas = load(path)
-        names = []
-        for name in schemas:
-            names.append(name)
-            # print(name)
-        return names
-    except FileNotFoundError:
-        schemas = None
-        return False
 
 
 def existsTable(tableName__):
@@ -226,6 +205,98 @@ def getTable(tableName__):
         schema = {}
     return schema
 
+
+def existsAttr(tableName, attri):
+    try:
+        path = DBFiles.format(globalValue.currentDB)
+        schemas = load(path)
+    except FileNotFoundError:
+        schemas = {}
+    table = schemas[tableName]
+    attris = table['attrs']
+    if attris:
+        for i, pair in enumerate(attris):
+            if pair == attri:
+                return True
+    return False
+
+# ------------------------
+# 转换操作
+# ------------------------
+
+
+def UniqueOfAttr(tableName, attr):
+    try:
+        path = DBFiles.format(globalValue.currentDB)
+        schemas = load(path)
+    except FileNotFoundError:
+        schemas = {}
+    table = schemas[tableName]
+    attris = table['attrs']
+    unique = table['uniques']
+    if attris:
+        for i, pair in enumerate(attris):
+            if pair == attr:
+                break
+        return unique[i]
+
+
+def TypeOfAttr(tableName, attr):
+    try:
+        path = DBFiles.format(globalValue.currentDB)
+        schemas = load(path)
+    except FileNotFoundError:
+        schemas = {}
+    table = schemas[tableName]
+    attris = table['attrs']
+    types = table['types']
+    if attris:
+        for i, pair in enumerate(attris):
+            if pair == attr:
+                break
+        return types[i]
+
+
+def IndexOfAttr(tableName, attr):
+    try:
+        path = DBFiles.format(globalValue.currentDB)
+        schemas = load(path)
+    except FileNotFoundError:
+        schemas = {}
+    table = schemas[tableName]
+    index = table['index']
+    for i, pair in enumerate(index):
+        if pair[1] == attr:
+            return True
+            break
+    return False
+
+
+# def convertToString(digit):
+#     if digit == -1:
+#         return 'int'
+#     elif digit == 0:
+#         return 'float'
+#     else:
+#         return 'char('+digit+')'
+
+
+def convert(type):
+    if type == 'int':
+        return -1
+    elif type == 'float':
+        return 0
+    else:
+        match = re.match(r'^char\((\d+)\)$', type, re.S)
+        if match:
+            n = int(match.group(1))
+            if n >= 1 and n <= 255:
+                return n
+            else:
+                return MiniSQLError('char(n): n is out of range [1, 255]')
+        else:
+            raise MiniSQLSyntaxError('Syntax Error in type {} '.format(type))
+
 # ------------------------
 # 索引操作
 # ------------------------
@@ -244,15 +315,16 @@ def createIndex(indexName, tableName, attri):
 
         if tableName in schemas:
             if existsAttr(tableName, attri):
-                if IndexOfAttr(tableName,attri):
-                    log('[create Index]\t索引 '+indexName+'创建失败，本程序暂不支持且不建议在同一列上建立多个索引')
+                if IndexOfAttr(tableName, attri):
+                    log('[create Index]\t索引 '+indexName +
+                        '创建失败，本程序暂不支持且不建议在同一列上建立多个索引')
                     return False
                 # for name in Indexs:
                 #     if Indexs[name]['attri'] == attri and Indexs[name]['table'] == tableName:
                 #         Indexs.pop(name)
                 #         break
-                        # log('[create Index]\t索引 '+indexName+' 创建成功')
-                        # return True
+                    # log('[create Index]\t索引 '+indexName+' 创建成功')
+                    # return True
 
                 Indexs[indexName] = {'table': tableName, 'attri': attri}
 
@@ -292,12 +364,10 @@ def dropIndex(indexName__, ifPri):
     path = DBFiles.format(globalValue.currentDB)
     schemas = load(path)
     Indexs = load(indexFile)
-    
 
     if indexName__ not in Indexs:
         log('[drop Index]\t删除索引失败，不存在该索引名 ' + indexName__,)
     else:
-
 
         tableName = Indexs[indexName__]['table']
         attri = Indexs[indexName__]['attri']
@@ -314,9 +384,7 @@ def dropIndex(indexName__, ifPri):
                 store(Indexs, indexFile)
                 return True
         Indexs.pop(indexName__)
-        
 
-        
         index = table['index']
         attri = []
         if index:
@@ -328,15 +396,14 @@ def dropIndex(indexName__, ifPri):
                     keys = table[attri]['keys']
                     values = table[attri]['values']
                     if attri in globalValue.currentIndex.index_trees[tableName]:
-                        globalValue.currentIndex.index_trees[tableName].pop(attri)
-                    
-                    
+                        globalValue.currentIndex.index_trees[tableName].pop(
+                            attri)
+
                     normal_list = globalValue.currentIndex.normal_list
                     norm = {}
                     norm['keys'] = keys
                     norm['values'] = values
                     globalValue.currentIndex.normal_list[tableName][attri] = norm
-            
 
                     # table['attrs'].append(attri)
                     # table['types'].append(convertToString(TypeOfAttr(tableName,attri)))
@@ -358,119 +425,122 @@ def getIndexInfo():
         print('\t'+index)
 
 
-def existsAttr(tableName, attri):
-    try:
-        path = DBFiles.format(globalValue.currentDB)
-        schemas = load(path)
-    except FileNotFoundError:
-        schemas = {}
-    table = schemas[tableName]
-    attris = table['attrs']
-    if attris:
-        for i, pair in enumerate(attris):
-            if pair == attri:
-                return True
-    return False
-
-
-def UniqueOfAttr(tableName, attr):
-    try:
-        path = DBFiles.format(globalValue.currentDB)
-        schemas = load(path)
-    except FileNotFoundError:
-        schemas = {}
-    table = schemas[tableName]
-    attris = table['attrs']
-    unique = table['uniques']
-    if attris:
-        for i, pair in enumerate(attris):
-            if pair == attr:
-                break
-        return unique[i]
-
-
-def TypeOfAttr(tableName, attr):
-    try:
-        path = DBFiles.format(globalValue.currentDB)
-        schemas = load(path)
-    except FileNotFoundError:
-        schemas = {}
-    table = schemas[tableName]
-    attris = table['attrs']
-    types = table['types']
-    if attris:
-        for i, pair in enumerate(attris):
-            if pair == attr:
-                break
-        return types[i]
-
-def IndexOfAttr(tableName, attr):
-    try:
-        path = DBFiles.format(globalValue.currentDB)
-        schemas = load(path)
-    except FileNotFoundError:
-        schemas = {}
-    table = schemas[tableName]
-    index = table['index']
-    for i, pair in enumerate(index):
-        if pair[1] == attr:
-            return True
-            break
-    return False
 # ---------------------
 # test of CatalogManager
 # --------------------
 
 
 def main():
+
     clear_all()
+
+    # ------------------------------ 数据库操作验证
+    # 创建数据库
     createDB('myDB')
     createDB('yourDB')
-    SwitchToDB('myDB')
+    createDB('lll')
+    
 
-    printDB()
-    createTable('myTable', ['haha', 'nana','lalalal','hhh','111','222','333'], [
-                'char(100)', 'int', 'int', 'int', 'int', 'int', 'int'], 'haha', [True, True,True, True,True, True,True])
+    dbs = printDB()    # 查看当前所有数据库
+    print("当前拥有数据库：")
+    for db in dbs:
+        print('\t'+db)
+
+    SwitchToDB('myDB')
+    print(globalValue.currentDB)
+
+    dropDB('lll')
+    dbs = printDB()    # 查看当前所有数据库
+    print("当前拥有数据库：")
+    for db in dbs:
+        print('\t'+db)
+    
+    # 删除不存在库
+    dropDB('heyheyehey')
+    dbs = printDB()    # 查看当前所有数据库
+    print("当前拥有数据库：")
+    for db in dbs:
+        print('\t'+db)
+
+    # -----------------------------表操作验证
+    # 创建表
+    createTable('myTable', ['haha', 'nana', 'lalalal', 'hhh', '111', '222', '333'], [
+                'char(100)', 'int', 'int', 'int', 'int', 'int', 'int'], 'haha', [True, True, True, True, True, True, True])
+    # 创建主键不为首位的表
+    createTable('gogo1',['id','stuName','gender','seat'],['int','char(20)','char(1)','int'],'seat',[False,False,False,True])
+    
+    # 删除不存在表
     dropTable('66')
-    showTables()
+    tables = showTables()
+    print('当前数据库有如下表：')
+    for table in tables:
+        print('\t'+table)
+
+    # 创建表
     createTable('lory', ['zju', 'cmu'], [
                 'char(30)', 'int'], 'zju', [True, False])
-    showTables()
-    createTable('myTable', ['haha', 'nana'], ['char(25)', 'int'], 1, [0, 0])
-    globalValue.currentIndex.Save_file()
-    dropTable('myTable')
-    globalValue.currentIndex.Save_file()
-    showTables()
-    UniqueOfAttr('lory', 'zju')
+    tables = showTables()
+    print('当前数据库有如下表：')
+    for table in tables:
+        print('\t'+table)
 
-    # 索引测试
-    createIndex('zjuIndex', 'lory', 'zju')
+    # 创建已存在表
+    createTable('myTable', ['haha', 'nana'], ['char(25)', 'int'], 1, [0, 0])
+    tables = showTables()
+    print('当前数据库有如下表：')
+    for table in tables:
+        print('\t'+table)
+
+    # 删除表
+    dropTable('gogo1')
+    tables = showTables()
+    print('当前数据库有如下表：')
+    for table in tables:
+        print('\t'+table)
+
+    # -------------------------------------------------------索引测试
+    # 创建索引
+    createIndex('zjuIndex', 'lory', 'zju')  # 创建已存在主键索引
     createIndex('111Index', 'myTable', '111')
     createIndex('222Index', 'myTable', '222')
-    
     createIndex('333Index', 'myTable', '333')
     createIndex('lalalalIndex', 'myTable', 'lalalal')
-    
-    dropIndex('333Index',False)
-    
+
     getIndexInfo()
-    createIndex('zjuIndex', 'lory', '66')
-    createIndex('zju', 'lory', '66')
-    createIndex('z', 'harri', 'zju')
+
+    # 删除索引
+    dropIndex('333Index', False)
+    getIndexInfo()
+
+    # 创建索引，有问题
+    createIndex('zjuIndex', 'lory', 'cmu')   # 创建已存在索引名
+    createIndex('zju', 'lory', '66')    # 创建不存在属性
+    createIndex('z', 'harri', 'zju')    # 创建不存在表索引
+    getIndexInfo()
+
+    # 正确索引创建
     createIndex('cmuIndex', 'lory', 'cmu')
-    globalValue.currentIndex.Save_file()
-    print(showTables())
-    # createIndex('hahIndex', 'myTable', 'haha')
-    dropIndex('cmuIndex',False)
-    dropIndex('zjuIndex',True)
-    # getIndexInfo()
-    # dropIndex('lal')
-    # getIndexInfo()
+    getIndexInfo()
+
+    # 删除索引
+    dropIndex('cmuIndex', False)
+    getIndexInfo()
+
+    # 删除主键索引，不允许
+    dropIndex('priKey_lory_zju', False)
+    getIndexInfo()
+
+    # 删除不存在索引名
+    dropIndex('lal',False)
+    getIndexInfo()
+    
     # printDB()
+    # 删除当前操作库，抛出错误
     # dropDB('myDB')
     # printDB()
-    # dropDB('heyheyehey')
+
     globalValue.currentIndex.Save_file()
+
 
 if __name__ == '__main__':
     main()
