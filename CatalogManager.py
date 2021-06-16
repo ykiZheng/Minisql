@@ -84,17 +84,18 @@ def SwitchToDB(DBName__):
 
     path = DBFiles.format(DBName__)
     if os.path.exists(path):
-        globalValue.currentDB = DBName__
+        if globalValue.currentDB == None:
+            globalValue.currentDB = DBName__
+            globalValue.currentIndex.Load_file(index_filepath.format(DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
+        else:
+            globalValue.currentIndex.Save_file()
+            globalValue.currentDB = DBName__
+            globalValue.currentIndex.Load_file(index_filepath.format(DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
         print('#当前切换到', DBName__, '库')
-        globalValue.currentIndex.Load_file(index_filepath.format(
-            DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
-
+        return globalValue.currentDB
+        
     else:
-        log('#error: 切换数据库失败，当前不存在该数据库名: '+DBName__)
-
-    if globalValue.currentDB != None:
-        globalValue.currentIndex.Save_file()
-    return globalValue.currentDB
+        log('#error: 切换数据库失败，当前不存在该数据库名: '+DBName__)   
 
 
 def printDB():
@@ -168,9 +169,10 @@ def dropTable(tableName__):
             if col != Prikey:
                 dropIndex(IndexName, False)
                 store(schemas, path)
-                globalValue.currentIndex.Drop_table(tableName__, Prikey)
+                
             else:
                 dropIndex(IndexName, True)
+        globalValue.currentIndex.Drop_table(tableName__, Prikey)
         schemas.pop(tableName__)
         store(schemas, path)
         log('[Drop Table]\t删除表 '+tableName__+' 成功')
@@ -393,17 +395,24 @@ def dropIndex(indexName__, ifPri):
                 if pair[0] == indexName__:
                     attri = pair[1]
                     index.pop(i)
-                    table = globalValue.currentIndex.index_trees[tableName]
-                    keys = table[attri]['keys']
-                    values = table[attri]['values']
+                    BT = BPlusTree()
+                    BT.Trees = globalValue.currentIndex.index_trees[tableName][attri]
+                    values = list(BT.Fetch_all_nodes_value())
+                    keys = list(BT.Fetch_all_nodes())
+
+                    # if temp:
+                    #     res[0] = True
+                    #     res_data = []
+                    #     for offset in temp:
+                    #         data = self.buffer.Search_data(offset, attribute)
+                    #         res_data.append(data)
+                    #     res.append(res_data)
+
                     if attri in globalValue.currentIndex.index_trees[tableName]:
                         globalValue.currentIndex.index_trees[tableName].pop(
                             attri)
 
-                    normal_list = globalValue.currentIndex.normal_list
-                    norm = {}
-                    norm['keys'] = keys
-                    norm['values'] = values
+                    norm = {'keys':keys,'values':values}
                     globalValue.currentIndex.normal_list[tableName][attri] = norm
 
                     # table['attrs'].append(attri)
