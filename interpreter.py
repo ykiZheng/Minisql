@@ -18,8 +18,8 @@ def __finalize__():
     globalValue.currentIndex.Save_file()
 
 class miniSQL(cmd.Cmd):
-    __initialize__()
-    intro = 'Welcome to the MiniSQL database server.\nType help or ? to list commands.\n'
+    # __initialize__()
+    intro = 'Welcome to the MiniSQL database server.\nCreated by 颜天明 郑雨琪 刘文博 from Zhejiang University.\nType help or ? to list commands.\n'
     def do_show(self,args):
         args='show '+args
         args=args.replace(';','')
@@ -280,7 +280,7 @@ def exec_from_file(filename):#从文件读取命令
             else:        
                 try:
                     timestart = time.time()
-                    print(comand_)
+                    # print(comand_)
                     select_res = select(comand_)
                     timeend = time.time()
                     if select_res['select_res'][0]:
@@ -391,7 +391,7 @@ def exec_from_file(filename):#从文件读取命令
 
 if __name__ == '__main__':
     errortext = '''
-MiniSQL -u [username] -p [password] (optional)-execfile [filename]
+MiniSQL -u [username] -p [password] 
 \tLogin operators : 
 \t\t-u username\tusername for MiniSQL.
 \t\t-p password\tpassword for MiniSQL.\n
