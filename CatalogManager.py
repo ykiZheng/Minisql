@@ -148,7 +148,7 @@ def createTable(tableName__, attributes,  types, priKey, ifUniques):
         store(schemas, path)
 
         globalValue.currentIndex.Create_table(tableName__, priKey, attributes)
-        createIndex('priKey_'+tableName__+'_'+priKey, tableName__, priKey)
+        createIndex('priKey_'+tableName__+'_'+priKey, tableName__, priKey,True)
         log('[Create Table]\t创建表 ' + tableName__ + ' 成功')
     else:
         log('[Create Table]\t已存在该表名 ' + tableName__)
@@ -302,7 +302,7 @@ def convert(type):
 # ------------------------
 
 
-def createIndex(indexName, tableName, attri):
+def createIndex(indexName, tableName, attri, ifPri):
     indexFile = index_File.format(globalValue.currentDB)
     path = DBFiles.format(globalValue.currentDB)
     schemas = load(path)
@@ -331,22 +331,23 @@ def createIndex(indexName, tableName, attri):
                 # 更新表结构
                 schemas[tableName]['index'].append([indexName, attri])
 
+                if ifPri == False:
                 # --------------------需要Index的接口
-                BT = BPlusTree()
-                BT.BuildNewBPTree()
-                table = globalValue.currentIndex.normal_list[tableName]
-                if attri in table:
-                    keys = table[attri]['keys']
-                    values = table[attri]['values']
-                else:
-                    keys = []
-                    values = []
+                    BT = BPlusTree()
+                    BT.BuildNewBPTree()
+                    table = globalValue.currentIndex.normal_list[tableName]
+                    if attri in table:
+                        keys = table[attri]['keys']
+                        values = table[attri]['values']
+                    else:
+                        keys = []
+                        values = []
 
-                for i in range(len(keys)):
-                    BT.Insert_node(keys[i], values[i])
-                globalValue.currentIndex.index_trees[tableName][attri] = BT.Trees
-                if attri in table:
-                    globalValue.currentIndex.normal_list[tableName].pop(attri)
+                    for i in range(len(keys)):
+                        BT.Insert_node(keys[i], values[i])
+                    globalValue.currentIndex.index_trees[tableName][attri] = BT.Trees
+                    if attri in table:
+                        globalValue.currentIndex.normal_list[tableName].pop(attri)
 
                 store(schemas, path)
                 store(Indexs, indexFile)
@@ -500,11 +501,11 @@ def main():
 
     # -------------------------------------------------------索引测试
     # 创建索引
-    createIndex('zjuIndex', 'lory', 'zju')  # 创建已存在主键索引
-    createIndex('111Index', 'myTable', '111')
-    createIndex('222Index', 'myTable', '222')
-    createIndex('333Index', 'myTable', '333')
-    createIndex('lalalalIndex', 'myTable', 'lalalal')
+    createIndex('zjuIndex', 'lory', 'zju', False)  # 创建已存在主键索引
+    createIndex('111Index', 'myTable', '111', False)
+    createIndex('222Index', 'myTable', '222', False)
+    createIndex('333Index', 'myTable', '333', False)
+    createIndex('lalalalIndex', 'myTable', 'lalalal', False)
 
     getIndexInfo()
 
@@ -513,13 +514,13 @@ def main():
     getIndexInfo()
 
     # 创建索引，有问题
-    createIndex('zjuIndex', 'lory', 'cmu')   # 创建已存在索引名
-    createIndex('zju', 'lory', '66')    # 创建不存在属性
-    createIndex('z', 'harri', 'zju')    # 创建不存在表索引
+    createIndex('zjuIndex', 'lory', 'cmu',False)   # 创建已存在索引名
+    createIndex('zju', 'lory', '66',False)    # 创建不存在属性
+    createIndex('z', 'harri', 'zju',False)    # 创建不存在表索引
     getIndexInfo()
 
     # 正确索引创建
-    createIndex('cmuIndex', 'lory', 'cmu')
+    createIndex('cmuIndex', 'lory', 'cmu',False)
     getIndexInfo()
 
     # 删除索引
