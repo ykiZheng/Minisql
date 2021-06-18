@@ -657,59 +657,14 @@ def test():
     insert('insert into person values (171.1, 20, "Person20", "000020", 37)')
 
     select_res = select('select * from person where age = 25')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
-    drop_table('drop table person')
-    
+
     print(delete('delete from person where pid = 15'))
-    select_res = select('select * from person')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
 
     print(delete('delete from person where height = 173.5'))
-    select_res = select('select * from person')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
 
     print(delete('delete from person where age = 20 and height > 175.5'))
-    select_res = select('select * from person')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
 
     print(delete('delete from person where height = 175.1'))
-    select_res = select('select * from person')
-    if select_res['select_res'][0]:
-        temp = select_res['select_res'][1]
-        table_student = PrettyTable(select_res['attrs'])
-        for row in temp:
-            table_student.add_row(row)
-        print(table_student)
-    else:
-        print('Not Found')
 
     print(delete('delete from person where height = "Person20"'))
     select_res = select('select * from person')
@@ -721,8 +676,14 @@ def test():
         print(table_student)
     else:
         print('Not Found')
-
     
+    create_index('create index idx_height on person(height)')
+    create_index('create index idx_identity on person(identity)')
+    create_index('create index idx_age on person(age)')
+
+    drop_index('drop index idx_height')
+
+    drop_table('drop table person')
     globalValue.currentIndex.Save_file()
 
 if __name__ == '__main__':

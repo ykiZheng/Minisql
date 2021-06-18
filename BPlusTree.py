@@ -11,7 +11,7 @@ class BPlusTree():
         self.Trees = {}
         self.degree = 4
         self.fetch_nodes = []
-        self.fetch_nodes_value = []
+        self.fetch_nodes_key = []
 
     def GetFileBTree(self, file_path):
         with open(file_path, 'r') as fp:
@@ -355,20 +355,20 @@ class BPlusTree():
         self.Fetch_nodes_condition(self.Trees, 0, -1)
         return self.fetch_nodes
 
-    def Fetch_nodes_value(self, node):
+    def Fetch_nodes_key(self, node):
         if not node:
             return
         if node['leaf']:
             for i in range(node['num']):
-                self.fetch_nodes_value.append(node['values'][i])           
+                self.fetch_nodes_key.append(node['keys'][i])           
         else:
             for child in node['children']:
-                self.Fetch_nodes_value(child)
+                self.Fetch_nodes_key(child)
 
-    def Fetch_all_nodes_value(self):
-        self.fetch_nodes_value = []
-        self.Fetch_nodes_value(self.Trees)
-        return self.fetch_nodes_value
+    def Fetch_all_nodes_key(self):
+        self.fetch_nodes_key = []
+        self.Fetch_nodes_key(self.Trees)
+        return self.fetch_nodes_key
 
 # def search(key, condition):
 #     t1 = time.perf_counter()            
