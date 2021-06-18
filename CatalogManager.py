@@ -86,16 +86,18 @@ def SwitchToDB(DBName__):
     if os.path.exists(path):
         if globalValue.currentDB == None:
             globalValue.currentDB = DBName__
-            globalValue.currentIndex.Load_file(index_filepath.format(DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
+            globalValue.currentIndex.Load_file(index_filepath.format(
+                DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
         else:
             globalValue.currentIndex.Save_file()
             globalValue.currentDB = DBName__
-            globalValue.currentIndex.Load_file(index_filepath.format(DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
+            globalValue.currentIndex.Load_file(index_filepath.format(
+                DBName__), list_filepath.format(DBName__), data_filepath.format(DBName__))
         print('#当前切换到', DBName__, '库')
         return globalValue.currentDB
-        
+
     else:
-        log('#error: 切换数据库失败，当前不存在该数据库名: '+DBName__)   
+        log('#error: 切换数据库失败，当前不存在该数据库名: '+DBName__)
 
 
 def printDB():
@@ -149,7 +151,8 @@ def createTable(tableName__, attributes,  types, priKey, ifUniques):
         store(schemas, path)
 
         globalValue.currentIndex.Create_table(tableName__, priKey, attributes)
-        createIndex('priKey_'+tableName__+'_'+priKey, tableName__, priKey,True)
+        createIndex('priKey_'+tableName__+'_' +
+                    priKey, tableName__, priKey, True)
         log('[Create Table]\t创建表 ' + tableName__ + ' 成功')
     else:
         log('[Create Table]\t已存在该表名 ' + tableName__)
@@ -169,7 +172,7 @@ def dropTable(tableName__):
             if col != Prikey:
                 dropIndex(IndexName, True)
                 store(schemas, path)
-                
+
             else:
                 dropIndex(IndexName, True)
         globalValue.currentIndex.Drop_table(tableName__, Prikey)
@@ -334,7 +337,7 @@ def createIndex(indexName, tableName, attri, ifDrop):
                 schemas[tableName]['index'].append([indexName, attri])
 
                 if ifDrop == False:
-                # --------------------需要Index的接口
+                    # --------------------需要Index的接口
                     BT = BPlusTree()
                     BT.BuildNewBPTree()
                     table = globalValue.currentIndex.normal_list[tableName]
@@ -349,7 +352,8 @@ def createIndex(indexName, tableName, attri, ifDrop):
                         BT.Insert_node(keys[i], values[i])
                     globalValue.currentIndex.index_trees[tableName][attri] = BT.Trees
                     if attri in table:
-                        globalValue.currentIndex.normal_list[tableName].pop(attri)
+                        globalValue.currentIndex.normal_list[tableName].pop(
+                            attri)
 
                 store(schemas, path)
                 store(Indexs, indexFile)
@@ -399,19 +403,20 @@ def dropIndex(indexName__, ifDrop):
                             index.pop(i)
                             BT = BPlusTree()
                             BT.Trees = globalValue.currentIndex.index_trees[tableName][attri]
-                            values = list(BT.Fetch_all_nodes_value())
-                            keys = list(BT.Fetch_all_nodes())
+                            values = list(BT.Fetch_all_nodes())
+                            keys = list(BT.Fetch_all_nodes_key())
 
-                        
                             NL = NormalList()
                             # NL.Load_list(globalValue.currentIndex.normal_list[tableName])
-                            for i in range(0,len(keys)):
-                                NL.Insert_node(keys[i],values[i])
-                            globalValue.currentIndex.normal_list[tableName][attri] = {'keys':NL.keys,'values':NL.values}
+                            for i in range(0, len(keys)):
+                                NL.Insert_node(keys[i], values[i])
+                            globalValue.currentIndex.normal_list[tableName][attri] = {
+                                'keys': NL.keys, 'values': NL.values}
                             if attri in globalValue.currentIndex.index_trees[tableName]:
-                                globalValue.currentIndex.index_trees[tableName].pop(attri)
+                                globalValue.currentIndex.index_trees[tableName].pop(
+                                    attri)
 
-                            norm = {'keys':keys,'values':values}
+                            norm = {'keys': keys, 'values': values}
                             globalValue.currentIndex.normal_list[tableName][attri] = norm
                             break
 
@@ -442,7 +447,6 @@ def main():
     createDB('myDB')
     createDB('yourDB')
     createDB('lll')
-    
 
     dbs = printDB()    # 查看当前所有数据库
     print("当前拥有数据库：")
@@ -457,7 +461,7 @@ def main():
     print("当前拥有数据库：")
     for db in dbs:
         print('\t'+db)
-    
+
     # 删除不存在库
     dropDB('heyheyehey')
     dbs = printDB()    # 查看当前所有数据库
@@ -470,8 +474,9 @@ def main():
     createTable('myTable', ['haha', 'nana', 'lalalal', 'hhh', '111', '222', '333'], [
                 'char(100)', 'int', 'int', 'int', 'int', 'int', 'int'], 'haha', [True, True, True, True, True, True, True])
     # 创建主键不为首位的表
-    createTable('gogo1',['id','stuName','gender','seat'],['int','char(20)','char(1)','int'],'seat',[False,False,False,True])
-    
+    createTable('gogo1', ['id', 'stuName', 'gender', 'seat'], [
+                'int', 'char(20)', 'char(1)', 'int'], 'seat', [False, False, False, True])
+
     # 删除不存在表
     dropTable('66')
     tables = showTables()
@@ -516,13 +521,13 @@ def main():
     getIndexInfo()
 
     # 创建索引，有问题
-    createIndex('zjuIndex', 'lory', 'cmu',False)   # 创建已存在索引名
-    createIndex('zju', 'lory', '66',False)    # 创建不存在属性
-    createIndex('z', 'harri', 'zju',False)    # 创建不存在表索引
+    createIndex('zjuIndex', 'lory', 'cmu', False)   # 创建已存在索引名
+    createIndex('zju', 'lory', '66', False)    # 创建不存在属性
+    createIndex('z', 'harri', 'zju', False)    # 创建不存在表索引
     getIndexInfo()
 
     # 正确索引创建
-    createIndex('cmuIndex', 'lory', 'cmu',False)
+    createIndex('cmuIndex', 'lory', 'cmu', False)
     getIndexInfo()
 
     # 删除索引
@@ -534,9 +539,9 @@ def main():
     getIndexInfo()
 
     # 删除不存在索引名
-    dropIndex('lal',False)
+    dropIndex('lal', False)
     getIndexInfo()
-    
+
     # printDB()
     # 删除当前操作库，抛出错误
     # dropDB('myDB')
