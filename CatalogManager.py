@@ -399,8 +399,8 @@ def dropIndex(indexName__, ifDrop):
                             index.pop(i)
                             BT = BPlusTree()
                             BT.Trees = globalValue.currentIndex.index_trees[tableName][attri]
-                            values = list(BT.Fetch_all_nodes_value())
-                            keys = list(BT.Fetch_all_nodes())
+                            values = list(BT.Fetch_all_nodes())
+                            keys = list(BT.Fetch_all_nodes_key())
 
                         
                             NL = NormalList()
