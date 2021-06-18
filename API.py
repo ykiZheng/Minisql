@@ -438,11 +438,14 @@ def select(query):
         if match:
             cols = match.group(1).strip()
             tableName = match.group(2).strip()
-            schema = getTable(tableName)
-            isPri = schema['primary_key']
-            attrs = schema['attrs']
-            Types = schema['types']
-            ops = -1
+            if existsTable(tableName):
+                schema = getTable(tableName)
+                isPri = schema['primary_key']
+                attrs = schema['attrs']
+                Types = schema['types']
+                ops = -1
+            else:
+                raise MiniSQLError('[select]\t不存在该表 '+tableName)
 
         else:
             raise MiniSQLSyntaxError('Syntax Error in: ' + query)
