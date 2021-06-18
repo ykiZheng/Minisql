@@ -17,17 +17,38 @@ def __initialize__():
 def __finalize__():
     globalValue.currentIndex.Save_file()
 
+def low(s):
+    flag=1
+    r=''
+    for i in s:
+        if i=='"':
+            flag=~flag
+        if flag==1:
+            if i>='A' and i<='Z':
+                i=chr(ord(i)+32)
+                r+=i
+                # s[i]=tmp
+                # print(i)
+            else:
+                r+=i
+                continue
+        else:
+            r+=i
+            continue 
+    return r
+
 class miniSQL(cmd.Cmd):
     # __initialize__()
     intro = 'Welcome to the MiniSQL database server.\nCreated by 颜天明 郑雨琪 刘文博 from Zhejiang University.\nType help or ? to list commands.\n'
     def do_show(self,args):
         args='show '+args
+        args=low(args)
         args=args.replace(';','')
         # print(args.split(' ')[1])
         if args.split(' ')[1] == 'databases':
             try:
                 time_start = time.time()
-                print(show_dbs(args.replace(';','').lower()))
+                print(show_dbs(args.replace(';','')))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
@@ -35,28 +56,30 @@ class miniSQL(cmd.Cmd):
         elif args.split(' ')[1] == 'tables':
             try:
                 time_start = time.time()
-                print(show_tables(args.replace(';','').lower()))
+                print(show_tables(args.replace(';','')))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
                 log(str(e))
     def do_use(self,args):
         args="use "+args
+        args=low(args)
         args=args.replace(';','')
         try:
             time_start = time.time()
-            use_db(args.replace(';','').lower())
+            use_db(args.replace(';',''))
             time_end = time.time()
             print("Time elapsed : %fs." % (time_end - time_start))
         except MiniSQLError as e:
             log(str(e))
     def do_select(self,args):
         args="select "+args
+        args=low(args)
         args=args.replace(';','')
         if args.split(' ')[1] == 'database':
             try:
                 time_start = time.time()
-                print(select_db(args.replace(';','').lower()))
+                print(select_db(args.replace(';','')))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
@@ -64,8 +87,8 @@ class miniSQL(cmd.Cmd):
         else:
             try:
                 time_start = time.time()
-                # print(args.replace(';','').lower())
-                select_res = select(args.replace(';','').lower())
+                # print(args.replace(';',''))
+                select_res = select(args.replace(';',''))
                 time_end = time.time()
                 if select_res['select_res'][0]:
                     temp=select_res['select_res'][1]
@@ -88,11 +111,13 @@ class miniSQL(cmd.Cmd):
     def do_create(self,args):
         # print(args)
         args="create "+args
+        args=low(args)
         args=args.replace(';','')
         if args.split(' ')[1] == 'database':
             try:
                 time_start = time.time()
-                create_db(args.replace(';','').lower())
+                # print(args.replace(';','').lower())
+                create_db(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
@@ -104,6 +129,7 @@ class miniSQL(cmd.Cmd):
                 if s[x+3]!='(':
                     tmp=s.replace("("," ")
                     tmp=tmp.replace(')',' ')
+                    tmp=tmp.replace(',',' ')
                     s2=tmp.split(' ')
                     for i in range(len(s2)):
                         if s2[i] == 'primary':
@@ -118,7 +144,8 @@ class miniSQL(cmd.Cmd):
             # print(args)
             try:
                 time_start = time.time()
-                create_table(args.replace(';','').lower())
+                # print(args.replace(';',''))
+                create_table(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
@@ -126,18 +153,19 @@ class miniSQL(cmd.Cmd):
         elif args.split(' ')[1] == 'index':
             try:
                 time_start = time.time()
-                create_index(args.replace(';','').lower())
+                create_index(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
                 log(str(e)) 
     def do_drop(self,args):
         args="drop "+args
+        args=low(args)
         args=args.replace(';','')
         if args.split(' ')[1] == 'database':
             try:
                 time_start = time.time()
-                drop_db(args.replace(';','').lower())
+                drop_db(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
@@ -145,7 +173,7 @@ class miniSQL(cmd.Cmd):
         elif args.split(' ')[1] == 'table':
             try:
                 time_start = time.time()
-                drop_table(args.replace(';','').lower())
+                drop_table(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
@@ -154,17 +182,18 @@ class miniSQL(cmd.Cmd):
             try:
                 time_start = time.time()
                 # print(args.replace(';','').lower())
-                drop_index(args.replace(';','').lower())
+                drop_index(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
                 log(str(e))
     def do_insert(self,args):
         args='insert '+args
+        args=low(args)
         args=args.replace(';','').replace("'",'')
         try:
             time_start = time.time()
-            insert(args.replace(';','').lower())
+            insert(args.replace(';',''))
             time_end = time.time()
             print('[Insert table]  插入成功')
             print("Time elapsed : %fs." % (time_end - time_start))
@@ -173,11 +202,14 @@ class miniSQL(cmd.Cmd):
 
     def do_delete(self,args):
         args='delete '+args
+        args=low(args)
         args=args.replace(';','')
         try:
             time_start = time.time()
-            # print(args.replace(';','').lower())
-            delete(args.replace(';','').lower())
+            if delete(args.replace(';','')):
+                print("[Delete]\t删除成功")
+            else:
+                print("不存在满足条件的tuple")
             time_end = time.time()
             print("Time elapsed : %fs." % (time_end - time_start))
         except MiniSQLError as e:
@@ -223,7 +255,7 @@ class miniSQL(cmd.Cmd):
     def help_select(self):
         print()
         print("Select a database to show its information:select database()")
-        print("Select tuples from tables")
+        print("Select tuples from tables : select * from 表名 where 条件")
 
     def help_create(self):
         print()
@@ -255,7 +287,8 @@ def exec_from_file(filename):#从文件读取命令
     comands = [i.strip().replace('\n','') for i in comands]
     # __initialize__()
     for comand in comands:
-        comand_=comand.lower()
+        # comand_=comand.lower()
+        comand_=low(comand)
         if comand_ == '':
             continue
         if comand_[0] == '#':
@@ -352,6 +385,7 @@ def exec_from_file(filename):#从文件读取命令
                     if s[x+3]!='(':
                         tmp=s.replace("(","")
                         tmp=tmp.replace(')','')
+                        tmp=tmp.replace(',',' ')
                         s2=tmp.split(' ')
                         for i in range(len(s2)):
                             if s2[i] == 'primary':
