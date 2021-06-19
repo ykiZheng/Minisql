@@ -41,191 +41,216 @@ class miniSQL(cmd.Cmd):
     # __initialize__()
     intro = 'Welcome to the MiniSQL database server.\nCreated by 颜天明 郑雨琪 刘文博 from Zhejiang University.\nType help or ? to list commands.\n'
     def do_show(self,args):
-        args='show '+args
-        args=low(args)
-        args=args.replace(';','')
-        # print(args.split(' ')[1])
-        if args.split(' ')[1] == 'databases':
-            try:
-                time_start = time.time()
-                print(show_dbs(args.replace(';','')))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
-        elif args.split(' ')[1] == 'tables':
-            try:
-                time_start = time.time()
-                print(show_tables(args.replace(';','')))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
+        if args.find(';')!=-1:
+            args='show '+args
+            args=low(args)
+            args=args.replace(';','')
+            if args.split(' ')[1] == 'databases':
+                try:
+                    time_start = time.time()
+                    print(show_dbs(args.replace(';','')))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+            elif args.split(' ')[1] == 'tables':
+                try:
+                    time_start = time.time()
+                    print(show_tables(args.replace(';','')))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+        else:
+            print('Syntax error(;)')
     def do_use(self,args):
-        args="use "+args
-        args=low(args)
-        args=args.replace(';','')
-        try:
-            time_start = time.time()
-            use_db(args.replace(';',''))
-            time_end = time.time()
-            print("Time elapsed : %fs." % (time_end - time_start))
-        except MiniSQLError as e:
-            log(str(e))
-    def do_select(self,args):
-        args="select "+args
-        args=low(args)
-        args=args.replace(';','')
-        if args.split(' ')[1] == 'database':
+        if args.find(';')!=-1:
+            args="use "+args
+            args=low(args)
+            args=args.replace(';','')
             try:
                 time_start = time.time()
-                print(select_db(args.replace(';','')))
+                use_db(args.replace(';',''))
                 time_end = time.time()
                 print("Time elapsed : %fs." % (time_end - time_start))
             except MiniSQLError as e:
                 log(str(e))
         else:
-            try:
-                time_start = time.time()
-                # print(args.replace(';',''))
-                select_res = select(args.replace(';',''))
-                time_end = time.time()
-                if select_res['select_res'][0]:
-                    temp=select_res['select_res'][1]
-                    table = PrettyTable(select_res['attrs'])
-                    i=0
-                    for row in temp:
-                        i=i+1
-                        table.add_row(row)
-                    print(table)
-                    print(i,end = '')
-                    print(' rows in set ',end = '')
-                    print("  Time elapsed : %fs." % (time_end - time_start))
-                else:
-                    table = PrettyTable(select_res['attrs'])
-                    print(table)
-                    print('Empty set ',end = '')
+            print('Syntax error(;)')
+    def do_select(self,args):
+        if args.find(';')!=-1:
+            args="select "+args
+            args=low(args)
+            args=args.replace(';','')
+            if args.split(' ')[1] == 'database':
+                try:
+                    time_start = time.time()
+                    print(select_db(args.replace(';','')))
+                    time_end = time.time()
                     print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
+                except MiniSQLError as e:
+                    log(str(e))
+            else:
+                try:
+                    time_start = time.time()
+                    # print(args.replace(';',''))
+                    select_res = select(args.replace(';',''))
+                    time_end = time.time()
+                    if select_res['select_res'][0]:
+                        temp=select_res['select_res'][1]
+                        table = PrettyTable(select_res['attrs'])
+                        i=0
+                        for row in temp:
+                            i=i+1
+                            table.add_row(row)
+                        print(table)
+                        print(i,end = '')
+                        print(' rows in set ',end = '')
+                        print("  Time elapsed : %fs." % (time_end - time_start))
+                    else:
+                        table = PrettyTable(select_res['attrs'])
+                        print(table)
+                        print('Empty set ',end = '')
+                        print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+        else:
+            print('Syntax error(;)')
     def do_create(self,args):
-        # print(args)
-        args="create "+args
-        args=low(args)
-        args=args.replace(';','')
-        if args.split(' ')[1] == 'database':
-            try:
-                time_start = time.time()
-                # print(args.replace(';','').lower())
-                create_db(args.replace(';',''))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
-        elif args.split(' ')[1] == 'table':
-            if args.find('primary')!=-1:
-                s=args
-                x=s.find('key')
-                if s[x+3]!='(':
-                    tmp=s.replace("("," ")
-                    tmp=tmp.replace(')',' ')
-                    tmp=tmp.replace(',',' ')
-                    s2=tmp.split(' ')
-                    for i in range(len(s2)):
-                        if s2[i] == 'primary':
-                            break
-                    s3=s2[i-2].strip()
-                    a=s.find('primary')
-                    s1=s[a:a+11]
-                    s=s.replace('primary key','')
-                    s=s[0:len(s)-1]
-                    s=s+','+s1+'('+s3+'))'
-                args=s  #处理primary key位置
-            # print(args)
-            try:
-                time_start = time.time()
-                # print(args.replace(';',''))
-                create_table(args.replace(';',''))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
-        elif args.split(' ')[1] == 'index':
-            try:
-                time_start = time.time()
-                create_index(args.replace(';',''))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e)) 
+        if args.find(';')!=-1:
+            args="create "+args
+            args=low(args)
+            args=args.replace(';','')
+            if args.split(' ')[1] == 'database':
+                try:
+                    time_start = time.time()
+                    # print(args.replace(';','').lower())
+                    create_db(args.replace(';',''))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+            elif args.split(' ')[1] == 'table':
+                if args.find('primary')!=-1:
+                    s=args
+                    x=s.find('key')
+                    if s[x+3]!='(':
+                        tmp=s.replace("("," ")
+                        tmp=tmp.replace(')',' ')
+                        tmp=tmp.replace(',',' ')
+                        s2=tmp.split(' ')
+                        for i in range(len(s2)):
+                            if s2[i] == 'primary':
+                                break
+                        s3=s2[i-2].strip()
+                        a=s.find('primary')
+                        s1=s[a:a+11]
+                        s=s.replace('primary key','')
+                        s=s[0:len(s)-1]
+                        s=s+','+s1+'('+s3+'))'
+                    args=s  #处理primary key位置
+                # print(args)
+                try:
+                    time_start = time.time()
+                    # print(args.replace(';',''))
+                    create_table(args.replace(';',''))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+            elif args.split(' ')[1] == 'index':
+                try:
+                    time_start = time.time()
+                    create_index(args.replace(';',''))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e)) 
+        else:
+            print('Syntax error(;)')
     def do_drop(self,args):
-        args="drop "+args
-        args=low(args)
-        args=args.replace(';','')
-        if args.split(' ')[1] == 'database':
-            try:
-                time_start = time.time()
-                drop_db(args.replace(';',''))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
-        elif args.split(' ')[1] == 'table':
-            try:
-                time_start = time.time()
-                drop_table(args.replace(';',''))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
-        elif args.split(' ')[1] == 'index':
-            try:
-                time_start = time.time()
-                # print(args.replace(';','').lower())
-                drop_index(args.replace(';',''))
-                time_end = time.time()
-                print("Time elapsed : %fs." % (time_end - time_start))
-            except MiniSQLError as e:
-                log(str(e))
+        if args.find(';')!=-1:
+            args="drop "+args
+            args=low(args)
+            args=args.replace(';','')
+            if args.split(' ')[1] == 'database':
+                try:
+                    time_start = time.time()
+                    drop_db(args.replace(';',''))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+            elif args.split(' ')[1] == 'table':
+                try:
+                    time_start = time.time()
+                    drop_table(args.replace(';',''))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+            elif args.split(' ')[1] == 'index':
+                try:
+                    time_start = time.time()
+                    # print(args.replace(';','').lower())
+                    drop_index(args.replace(';',''))
+                    time_end = time.time()
+                    print("Time elapsed : %fs." % (time_end - time_start))
+                except MiniSQLError as e:
+                    log(str(e))
+        else:
+            print('Syntax error(;)')
     def do_insert(self,args):
-        args='insert '+args
-        args=low(args)
-        args=args.replace(';','').replace("'",'')
-        try:
-            time_start = time.time()
-            insert(args.replace(';',''))
-            time_end = time.time()
-            print('[Insert table]  插入成功')
-            print("Time elapsed : %fs." % (time_end - time_start))
-        except MiniSQLError as e:
-            log(str(e))
+        if args.find(';')!=-1:
+            args='insert '+args
+            args=low(args)
+            args=args.replace(';','').replace("'",'')
+            try:
+                time_start = time.time()
+                insert(args.replace(';',''))
+                time_end = time.time()
+                print('[Insert table]  插入成功')
+                print("Time elapsed : %fs." % (time_end - time_start))
+            except MiniSQLError as e:
+                log(str(e))
+        else:
+            print('Syntax error(;)')
 
     def do_delete(self,args):
-        args='delete '+args
-        args=low(args)
-        args=args.replace(';','')
-        try:
-            time_start = time.time()
-            if delete(args.replace(';','')):
-                print("[Delete]\t删除成功")
-            else:
-                print("不存在满足条件的tuple")
-            time_end = time.time()
-            print("Time elapsed : %fs." % (time_end - time_start))
-        except MiniSQLError as e:
-            log(str(e))
+        if args.find(';')!=-1:
+            args='delete '+args
+            args=low(args)
+            args=args.replace(';','')
+            try:
+                time_start = time.time()
+                if delete(args.replace(';','')):
+                    print("[Delete]\t删除成功")
+                else:
+                    print("不存在满足条件的tuple")
+                time_end = time.time()
+                print("Time elapsed : %fs." % (time_end - time_start))
+            except MiniSQLError as e:
+                log(str(e))
+        else:
+            print('Syntax error(;)')
     
     def do_execfile(self,args):
-        time_start = time.time()
-        args=args.strip().replace(';','')
-        exec_from_file(args)
-        time_end = time.time()
-        print("Running all commands in the file costs %fs." % (time_end - time_start))
+        if args.find(';')!=-1:
+            time_start = time.time()
+            args=args.strip().replace(';','')
+            exec_from_file(args)
+            time_end = time.time()
+            print("Running all commands in the file costs %fs." % (time_end - time_start))
+        else:
+            print('Syntax error(;)')
 
     def do_quit(self,args):
-        __finalize__()
-        print('Goodbye.')
-        sys.exit()
+        if args.find(';')!=-1:
+            __finalize__()
+            print('Goodbye.')
+            sys.exit()
+        else:
+            print('Syntax error(;)')
 
     def emptyline(self):
         pass
